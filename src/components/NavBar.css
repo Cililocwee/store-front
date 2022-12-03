@@ -1,42 +1,39 @@
 .navbar {
-  background-color: gray;
+  /* background-color: gray; */
+  background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  height: 50px;
+  height: 100px;
+  font-size: 2em;
 }
 
 .navbar img {
-  height: 50px;
+  height: 75px;
+  padding: 10px;
 }
 
-.navbar > ul {
-  list-style: none;
+.nav-links {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 50%;
+  width: 40%;
   height: 100%;
-  /* margin: 0 5% 0 0; */
 }
 
-.navbar li {
+.nav-link {
   height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  /* background-color: black; */
   padding: 0 10px;
-  width: auto;
+  /* flex-shrink: 4; */
+  /* min-width: 50px; */
 }
 
-.navbar li:hover {
-  background-image: radial-gradient(
-    circle farthest-side,
-    rgba(0, 0, 0, 0.75),
-    rgba(255, 255, 255, 0)
-  );
-  background-repeat: no-repeat;
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: var(--card-highlight);
 }
 
 .navbar a {
@@ -50,10 +47,6 @@
   justify-content: center;
 }
 
-.navbar > h1 {
-  margin: 15px;
-}
-
 #logobox {
   display: flex;
   justify-content: center;
@@ -61,8 +54,14 @@
   gap: 15px;
 }
 
+#shoppingcart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #shoppingcart img {
-  height: 25px;
+  height: 35px;
 }
 
 #shoppingcart:hover {
@@ -72,4 +71,55 @@
 
 #storename {
   font-size: 2em;
+  min-width: 255px;
+}
+
+.dropdown-wrapper {
+  display: none;
+  flex-direction: column;
+  width: 5em;
+  /* position: relative; */
+  margin: auto;
+
+  z-index: 99;
+  background-color: var(--primary-color);
+  border: 1px solid var(--card-highlight);
+  /* filter: drop-shadow(0px 2px 5px black); */
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+  /* right: 0; */
+  margin-top: 1em;
+  gap: 0.5em;
+  padding: 0.25em;
+}
+
+#folded {
+  display: none;
+}
+
+#unfolded {
+  display: flex;
+}
+
+@media (max-width: 780px) {
+  .dropdown-wrapper {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  #storename {
+    display: none;
+  }
+  .dropdown-wrapper {
+    margin-right: 0;
+  }
 }

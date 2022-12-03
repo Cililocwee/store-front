@@ -3,6 +3,8 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 import TeaLogo from "../assets/tea.svg";
 import ShoppingCart from "../assets/shoppingcart.svg";
+import MenuIcon from "../assets/menuicon.svg";
+import DropDown from "./DropDown";
 
 export default function NavBar() {
   return (
@@ -13,25 +15,23 @@ export default function NavBar() {
           <span id="storename">Tea Time</span>
         </div>
       </Link>
-      <ul>
-        <Link to="/bubble-tea">
-          <li>Bubble Tea</li>
+      <DropDown />
+      <div className="nav-links">
+        <Link to="/tea">
+          <span className="nav-link">Tea</span>
         </Link>
-        <Link to="/pearl-tea">
-          <li>Pearl Tea</li>
+        <Link to="/coffee">
+          <span className="nav-link">Coffee</span>
         </Link>
-        <Link to="/classic-tea">
-          <li>Classic Tea</li>
-        </Link>
-        <Link to="/non-tea">
-          <li>Non-Tea</li>
+        <Link to="/food">
+          <span className="nav-link">Food</span>
         </Link>
         <Link to="/cart">
-          <li id="shoppingcart">
+          <div id="shoppingcart">
             <img src={ShoppingCart} alt="shopping cart" />
-          </li>
+          </div>
         </Link>
-      </ul>
+      </div>
     </div>
   );
 }

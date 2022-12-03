@@ -1,5 +1,33 @@
+/* @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min--moz-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+} */
+
+:root {
+  --primary-color: #bc4749;
+  --background-color: #f2e8cf;
+  --card-background: #a7c957;
+  --card-highlight: #6a994e;
+  --card-label: #386641;
+  --font-on-primary: #000000;
+  --font-on-dark: #f0f8ff;
+}
+
 html,
 body {
+  /* height: 100vh;
+  margin: 0;
+  width: 100%; */
+  width: 100%;
   height: 100vh;
   margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  background-color: var(--background-color);
 }

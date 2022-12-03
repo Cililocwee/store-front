@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import TeaPage from "./pages/TeaPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CoffeePage from "./pages/CoffeePage";
+import FoodPage from "./pages/FoodPage";
 
 function App() {
   return (
@@ -13,10 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/bubble-tea" element={<TeaPage type="Bubble Tea" />} />
-          <Route path="/pearl-tea" element={<TeaPage type="Pearl Tea" />} />
-          <Route path="/classic-tea" element={<TeaPage type="Classic Tea" />} />
-          <Route path="/non-tea" element={<TeaPage type="Non-Tea" />} />
+          <Route path="/tea" element={<TeaPage />} />
+          <Route path="/coffee" element={<CoffeePage />} />
+          <Route path="/food" element={<FoodPage />} />
         </Routes>
       </BrowserRouter>
     </div>
