@@ -1,19 +1,19 @@
 import React from "react";
 import DrinkCard from "../components/DrinkCard";
-import food from "../menuitems/foodData";
+import foods from "../menuitems/foodData";
 
 export default function FoodPage({ type, drinkdata }) {
   return (
     <div className="page-wrapper">
       <div className="page-title">Food</div>
       <div className="menu-wrapper">
-        {food.map((foodcoffee) => {
+        {foods.map((food) => {
           return (
             <DrinkCard
-              type={foodcoffee.type}
-              description={foodcoffee.description}
-              sizes={foodcoffee.sizes}
-              image={foodcoffee.picture}
+              type={food.type}
+              description={food.description}
+              image={food.picture}
+              price={food.price}
             />
           );
         })}

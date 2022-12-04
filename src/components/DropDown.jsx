@@ -6,16 +6,19 @@ import MenuIcon from "../assets/menuicon.svg";
 export default function DropDown() {
   const [viewState, setViewState] = useState("folded");
 
-  function handleClick() {
+  function handleClick(e) {
     if (viewState === "folded") {
       setViewState("unfolded");
     } else if (viewState === "unfolded") {
       setViewState("folded");
     }
+    document
+      .getElementById("dropdown-wrapper")
+      .classList.toggle("dropdownactive");
   }
 
   return (
-    <div className="dropdown-wrapper">
+    <div className="dropdown-wrapper" id="dropdown-wrapper">
       <img
         onClick={handleClick}
         className="dropdown-btn"

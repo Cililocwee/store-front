@@ -3,7 +3,6 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 import TeaLogo from "../assets/tea.svg";
 import ShoppingCart from "../assets/shoppingcart.svg";
-import MenuIcon from "../assets/menuicon.svg";
 import DropDown from "./DropDown";
 
 export default function NavBar() {

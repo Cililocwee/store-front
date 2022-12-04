@@ -83,14 +83,21 @@
 
   z-index: 99;
   background-color: var(--primary-color);
-  border: 1px solid var(--card-highlight);
+
+  /* border: 1px solid var(--card-highlight); */
   /* filter: drop-shadow(0px 2px 5px black); */
+}
+
+.dropdown-wrapper:hover,
+.dropdownactive {
+  filter: drop-shadow(5px 5px 5px black);
 }
 
 .dropdown {
   display: flex;
   flex-direction: column;
   /* position: absolute; */
+  transition: 0.5s;
   /* right: 0; */
   margin-top: 1em;
   gap: 0.5em;

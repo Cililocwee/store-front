@@ -13,6 +13,7 @@ export default function TeaPage() {
               type={tea.type}
               description={tea.description}
               image={tea.picture}
+              price={tea.price}
             />
           );
         })}

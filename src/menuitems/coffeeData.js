@@ -8,12 +8,14 @@ const coffees = [
     picture: Americano,
     description:
       "An espresso solo or dopplo with water. Served hot or over ice.",
+    price: "2.50",
   },
   {
     type: "Latte",
     picture: Latte,
     description:
       "Lovingly pulled espresso mixed with fresh milk brings out a slight natural vanilla note.",
+    price: "3.00",
   },
 
   {
@@ -21,6 +23,7 @@ const coffees = [
     picture: CMacc,
     description:
       "Gently steamed milk and a caramel drizzle pull this lovely invigorating drink together.",
+    price: "3.25",
   },
 ];
 

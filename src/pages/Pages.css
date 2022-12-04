@@ -9,6 +9,7 @@
   width: 75%;
   background-image: url("../assets/cafesplash.jpg");
   background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
   margin: 30px auto;
   filter: drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.5));
