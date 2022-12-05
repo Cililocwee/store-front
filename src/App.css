@@ -14,6 +14,8 @@
   margin: 30px;
   filter: drop-shadow(10px 10px 4px black);
   background-color: var(--card-background);
+  border-radius: 16px;
+  z-index: 0;
 }
 
 .drinkcard:hover {
@@ -24,14 +26,18 @@
   height: 300px;
   width: 100%;
   object-fit: cover;
+  border-radius: 0 0 16px 16px;
 }
-
+.price {
+  font-size: 1.5em;
+  padding-top: 5px;
+}
 .add-btn {
   opacity: 0;
   width: 200px;
   height: 200px;
   position: absolute;
-  top: 30%;
+  top: 0;
   background-image: url("./assets/addtocart.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -40,6 +46,7 @@
 
 .drinkcard:hover .add-btn {
   opacity: 75%;
+  top: 30%;
 }
 
 .drink-type {
@@ -48,10 +55,12 @@
   height: 50px;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: max(2em, 1em);
   font-weight: 600;
   background-color: var(--card-label);
   color: var(--font-on-dark);
+  border-radius: 16px 16px 0 0;
 }
 
 .drink-description {
@@ -67,6 +76,7 @@
   color: var(--font-on-dark);
   font-weight: 600;
   font-size: 1.3em;
+  border-radius: 0 0 16px 16px;
 }
 
 .drinkcard:hover .drink-description {
@@ -88,4 +98,38 @@
 .page-title {
   font-size: 4em;
   padding: 0.5em;
+}
+
+@media (max-width: 780px) {
+  .drinkcard {
+    width: 10em;
+    margin: 10px;
+  }
+
+  .drinkcard img {
+    height: 150px;
+    border-radius: 0;
+  }
+
+  .drink-type {
+    font-size: 1.5em;
+  }
+
+  .drink-description {
+    height: fit-content;
+    position: relative;
+    padding: 10px 5px;
+    background-color: var(--primary-color);
+  }
+
+  .drinkcard:hover .add-btn {
+    opacity: 75%;
+    top: 15%;
+    z-index: 99;
+    width: 50%;
+  }
+
+  .drinkcard:hover .drink-description {
+    opacity: 100;
+  }
 }
