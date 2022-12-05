@@ -1,26 +1,44 @@
 import React, { useContext } from "react";
+
 import { CartContext } from "../CartContext";
 
 export default function Cart() {
-  const { addItemToCart, setCartItems, removeItemFromCart, cart } =
-    useContext(CartContext);
+  const {
+    total,
+    clearCart,
+    addItemToCart,
+    setCartItems,
+    removeItemFromCart,
+    cart,
+  } = useContext(CartContext);
 
   return (
-    <div>
+    <div className="cart-wrapper">
       Items in cart:
       <ul>
         {cart.map(({ cartItem }) => {
-          console.log(cartItem.price);
           return (
             // TODO See below // Implement actual item removal
-            <li onClick={() => console.log("remove this")}>
+            <div
+              className="cart-item"
+              id={cartItem.id}
+              onClick={(e) => removeItemFromCart(e.target.id)}
+            >
               {cartItem.type.type} - ${cartItem.price.price}
-            </li>
+            </div>
           );
         })}
       </ul>
-      {/* TODO: Figure out how to implement a total */}
-      <p>Total: </p>
+      <p>Total: ${total}</p>
+      <button
+        onClick={() => {
+          console.log("not implemented");
+        }}
+      >
+        Check Out
+      </button>
+      <button onClick={clearCart}>Clear Cart</button>
+      <button onClick={() => console.log(cart)}>Check cart</button>
     </div>
   );
 }

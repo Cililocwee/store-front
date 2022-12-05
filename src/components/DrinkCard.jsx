@@ -2,10 +2,12 @@ import React from "react";
 
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
+import uuid4 from "uuid4";
 
-export default function DrinkCard({ type, image, description, price, clicky }) {
+export default function DrinkCard({ type, image, description, price }) {
   const { addItemToCart, setCartItems } = useContext(CartContext);
-  const cartItem = { type: { type }, price: { price } };
+  // TODO configure unique IDs so that they can be called later to remove from cart
+  const cartItem = { id: uuid4(), type: { type }, price: { price } };
 
   return (
     <div onClick={() => addItemToCart({ cartItem })} className="drinkcard">

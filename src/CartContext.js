@@ -4,19 +4,39 @@ export const CartContext = createContext(null);
 
 export const CartContextProvider = ({ children }) => {
   const [cart, setCartItems] = useState([]);
+  const [total, setTotal] = useState(0);
 
   const addItemToCart = (item) => {
-    // setCartItems(cart.append(item));
-    // setCartItems((prevCart) => cart.append(item));
     setCartItems((current) => [...current, item]);
-    // console.log(cart);
+    setTotal(total + parseFloat(item.cartItem.price.price));
   };
 
-  const removeItemFromCart = (item) => {
-    setCartItems(cart - 1);
+  const removeItemFromCart = (itemId) => {
+    let foo = [];
+    cart.forEach((position) => {
+      if (position.cartItem.id !== itemId) {
+        foo.push(position);
+      } else {
+        setTotal(total - position.cartItem.price.price);
+      }
+    });
+    setCartItems(foo);
   };
 
-  const value = { cart, setCartItems, addItemToCart, removeItemFromCart };
+  const clearCart = () => {
+    setCartItems([]);
+    setTotal(0);
+  };
+
+  const value = {
+    clearCart,
+    cart,
+    setCartItems,
+    addItemToCart,
+    removeItemFromCart,
+    total,
+  };
+
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 

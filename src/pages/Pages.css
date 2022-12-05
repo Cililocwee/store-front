@@ -14,3 +14,21 @@
   margin: 30px auto;
   filter: drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.5));
 }
+
+.cart-wrapper {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+}
+
+.cart-wrapper > button {
+  width: fit-content;
+  margin: 5px;
+  filter: drop-shadow(5px 5px 5px black);
+}
+
+.cart-item {
+  /* border: 1px solid black; */
+  margin: 10px;
+}

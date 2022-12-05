@@ -130,3 +130,9 @@
     margin-right: 0;
   }
 }
+
+#numberincart {
+  font-size: 0.75em;
+  position: absolute;
+  transform: translate(120%, 40%);
+}
