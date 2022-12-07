@@ -4,7 +4,6 @@ import DrinkCard from "../components/DrinkCard";
 import coffees from "../menuitems/coffeeData";
 
 export default function CoffeePage() {
-  // const { addItemToCart } = useContext(CartContextProvider);
   return (
     <div className="page-wrapper">
       <div className="page-title">Coffee</div>
@@ -16,6 +15,7 @@ export default function CoffeePage() {
               description={coffee.description}
               image={coffee.picture}
               price={coffee.price}
+              id={coffee.id}
             />
           );
         })}

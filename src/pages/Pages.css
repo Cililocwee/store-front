@@ -44,6 +44,11 @@
   filter: drop-shadow(5px 5px 5px black);
 }
 
+.cart-wrapper ul {
+  list-style: none;
+  padding: 0;
+}
+
 .cart-item {
   margin: 10px;
   border-bottom: 1px dashed var(--card-label);
@@ -84,4 +89,26 @@
   padding: 5px 5px 2px 5px;
   font-family: var(--global-font);
   font-size: 0.75em;
+}
+
+.receipt-line {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.receipt-input,
+.receipt-item {
+  margin-right: auto;
+}
+
+.receipt-input {
+  display: flex;
+  justify-content: space-between;
+  width: 75px;
+  border: 1px solid black;
+  padding: 2px;
+  background-color: var(--font-on-dark);
+  border-radius: 5px;
 }

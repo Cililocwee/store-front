@@ -11,7 +11,7 @@
   width: 20em;
   height: fit-content;
   border: 1px solid var(--card-background);
-  margin: 30px;
+  margin: 30px 30px 0px 30px;
   filter: drop-shadow(10px 10px 4px black);
   background-color: var(--card-background);
   border-radius: 16px;
@@ -98,6 +98,14 @@
 .page-title {
   font-size: 4em;
   padding: 0.5em;
+}
+
+.add-remove-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
 }
 
 @media (max-width: 780px) {

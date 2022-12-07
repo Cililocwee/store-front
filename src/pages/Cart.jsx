@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
+import VariableInput from "../components/VariableInput";
 
 export default function Cart() {
   const {
@@ -11,21 +12,26 @@ export default function Cart() {
     cart,
   } = useContext(CartContext);
 
+  const arr = cart;
+  const counts = {};
+  for (const num of arr) {
+    counts[num] = counts[num] ? counts[num] + 1 : 1;
+  }
+
+  // console.log(counts);
   return (
     <div className="content">
       <div className="cart-wrapper">
         Items in cart:
         <ul>
-          {cart.map(({ cartItem }) => {
+          {Object.keys(counts).map((key) => {
             return (
-              // TODO See below // Implement actual item removal
-              <div
-                className="cart-item"
-                id={cartItem.id}
-                onClick={(e) => removeItemFromCart(e.target.id)}
-              >
-                {cartItem.type.type} - ${cartItem.price.price}
-              </div>
+              <li>
+                <VariableInput
+                  item={key.split(",")[1]}
+                  number={counts[key.split(",")]}
+                />
+              </li>
             );
           })}
         </ul>

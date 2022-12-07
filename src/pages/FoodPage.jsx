@@ -14,6 +14,7 @@ export default function FoodPage({ type, drinkdata }) {
               description={food.description}
               image={food.picture}
               price={food.price}
+              id={food.id}
             />
           );
         })}

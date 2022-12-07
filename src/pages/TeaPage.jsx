@@ -14,6 +14,7 @@ export default function TeaPage() {
               description={tea.description}
               image={tea.picture}
               price={tea.price}
+              id={tea.id}
             />
           );
         })}
