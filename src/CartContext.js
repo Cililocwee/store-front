@@ -6,13 +6,11 @@ export const CartContext = createContext(null);
 export const CartContextProvider = ({ children }) => {
   const [cart, setCartItems] = useState([]);
   const [total, setTotal] = useState(0);
+  const [inventory, setInventory] = useState({});
 
   const addItemToCart = (item) => {
-    setCartItems((current) => [
-      ...current,
-      [item.cartItem.id.id, item.cartItem.type.type, item.cartItem.price.price],
-    ]);
-    setTotal(total + parseFloat(item.cartItem.price.price));
+    setCartItems((current) => [...current, [item[0], item[1], item[2]]]);
+    setTotal(total + parseFloat(item[2]));
   };
 
   const removeItemFromCart = (item) => {
@@ -22,9 +20,8 @@ export const CartContextProvider = ({ children }) => {
 
     if (positiveMatch.length > 0) {
       setTotal(total - item[2]);
-      console.log(item[2]);
     } else {
-      console.log("its gone");
+      console.log("No item");
     }
     positiveMatch.pop();
 
@@ -42,6 +39,16 @@ export const CartContextProvider = ({ children }) => {
     setTotal(0);
   };
 
+  let counter = {};
+
+  for (let element of cart.flat()) {
+    if (counter[element]) {
+      counter[element] += 1;
+    } else {
+      counter[element] = 1;
+    }
+  }
+
   const value = {
     clearCart,
     cart,
@@ -49,6 +56,9 @@ export const CartContextProvider = ({ children }) => {
     addItemToCart,
     removeItemFromCart,
     total,
+    inventory,
+    setInventory,
+    counter,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

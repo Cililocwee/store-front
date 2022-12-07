@@ -1,8 +1,11 @@
 import React from "react";
-import { useContext } from "react";
-import { CartContext } from "../CartContext";
 
-export default function VariableInput({ number, item, increment, decrement }) {
+export default function VariableInput({
+  number = 0,
+  item,
+  increment,
+  decrement,
+}) {
   return (
     <div>
       <div className="receipt-line">

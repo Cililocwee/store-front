@@ -18,7 +18,6 @@ export default function Cart() {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
   }
 
-  // console.log(counts);
   return (
     <div className="content">
       <div className="cart-wrapper">
@@ -27,9 +26,11 @@ export default function Cart() {
           {Object.keys(counts).map((key) => {
             return (
               <li>
+                {/* Still need to implement clicks */}
                 <VariableInput
                   item={key.split(",")[1]}
                   number={counts[key.split(",")]}
+                  decrement={() => console.log("hi")}
                 />
               </li>
             );
