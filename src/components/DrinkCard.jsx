@@ -18,7 +18,6 @@ export default function DrinkCard({ type, image, description, price, id }) {
   return (
     <div className="card-wrapper">
       <div className="drinkcard">
-        <div className="add-btn"></div>
         <div className="drink-type">{type}</div>
         <div className="price">${price}</div>
         <img alt={`${type}`} src={image} />

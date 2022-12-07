@@ -53,6 +53,7 @@
   margin: 10px;
   border-bottom: 1px dashed var(--card-label);
 }
+
 .cart-item:hover {
   text-decoration: line-through;
   color: darkred;
@@ -71,12 +72,14 @@
   color: var(--font-on-dark);
   margin-bottom: 15px;
 }
+
 #check-out {
   border-radius: 10px;
   font-size: 1em;
   font-family: var(--global-font);
   padding: 15px 15px 5px 15px;
 }
+
 #check-out:hover {
   background-color: var(--primary-color);
   color: var(--font-on-dark);
@@ -93,7 +96,8 @@
 
 .receipt-line {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin-bottom: 5px;
 }
@@ -103,10 +107,16 @@
   margin-right: auto;
 }
 
+.receipt-item {
+  text-align: center;
+}
+
 .receipt-input {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 75px;
+  height: 30px;
   border: 1px solid black;
   padding: 2px;
   background-color: var(--font-on-dark);

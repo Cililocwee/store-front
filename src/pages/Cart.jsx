@@ -10,6 +10,7 @@ export default function Cart() {
     setCartItems,
     removeItemFromCart,
     cart,
+    counter,
   } = useContext(CartContext);
 
   const arr = cart;
@@ -24,6 +25,7 @@ export default function Cart() {
         Items in cart:
         <ul>
           {Object.keys(counts).map((key) => {
+            console.log(counts);
             return (
               <li>
                 {/* Still need to implement clicks */}

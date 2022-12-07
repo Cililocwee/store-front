@@ -32,22 +32,6 @@
   font-size: 1.5em;
   padding-top: 5px;
 }
-.add-btn {
-  opacity: 0;
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  top: 0;
-  background-image: url("./assets/addtocart.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.5s;
-}
-
-.drinkcard:hover .add-btn {
-  opacity: 75%;
-  top: 30%;
-}
 
 .drink-type {
   display: flex;
@@ -128,13 +112,6 @@
     position: relative;
     padding: 10px 5px;
     background-color: var(--primary-color);
-  }
-
-  .drinkcard:hover .add-btn {
-    opacity: 75%;
-    top: 15%;
-    z-index: 99;
-    width: 50%;
   }
 
   .drinkcard:hover .drink-description {
