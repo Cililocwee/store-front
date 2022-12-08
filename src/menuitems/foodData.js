@@ -9,7 +9,7 @@ const food = [
     picture: BerryTart,
     description:
       "A lovely seasonal berry tart with locally sourced berries. Best with a warm drink!",
-    price: "3.50",
+    price: 350,
     id: uuid4(),
   },
   {
@@ -17,7 +17,7 @@ const food = [
     picture: CCarCupcake,
     description:
       "Decadence and delicousness! Give in to the allure of a warm chocolate embrace and a luscious caramel kiss.",
-    price: "2.50",
+    price: 250,
     id: uuid4(),
   },
   {
@@ -25,7 +25,7 @@ const food = [
     picture: RocherCupcake,
     description:
       "Candy heaven meets bakery paradise -- get lost in the hazelnut allure of this lovely dessert.",
-    price: "3.00",
+    price: 300,
     id: uuid4(),
   },
 ];
