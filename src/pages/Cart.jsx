@@ -16,6 +16,7 @@ export default function Cart() {
   } = useContext(CartContext);
 
   // an array [id,type,price,count]
+  // ** Unimplemented
   const [countDisplay, setCountDisplay] = useState([]);
 
   // TODO I need counts to be a state so everything rerenders when it changes
@@ -24,6 +25,7 @@ export default function Cart() {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
   }
 
+  // not implemented
   const sortCartForView = () => {
     // I need an array here [id,type,price,count]
     // ** This should be used in more places
@@ -33,14 +35,14 @@ export default function Cart() {
       semiSortedInvArr.push([...entry[0].split(","), entry[1]]);
     });
 
-    console.log(semiSortedInvArr);
+    // console.log(semiSortedInvArr);
 
     // sort the semiSortedInvArr
     semiSortedInvArr.sort((a, b) => {
       return a[1].localeCompare(b[1]);
     });
 
-    console.log(semiSortedInvArr);
+    // console.log(semiSortedInvArr);
     setCountDisplay(semiSortedInvArr);
   };
 
@@ -62,22 +64,6 @@ export default function Cart() {
               </li>
             );
           })}
-
-          {countDisplay.map((key) => {
-            return (
-              <li>
-                <VariableInput
-                  item={key[1]}
-                  number={key[3]}
-                  decrement={() => {
-                    removeItemFromCart(key);
-                    sortCartForView();
-                  }}
-                  increment={() => addItemToCart(key)}
-                />
-              </li>
-            );
-          })}
         </ul>
         {/* TODO: Total should always be in the format of $x.xx */}
         <div className="total-box">Total: ${total}</div>
@@ -92,7 +78,7 @@ export default function Cart() {
         <button id="cart-clear" onClick={clearCart}>
           Clear Cart
         </button>
-        <button onClick={() => sortCartForView()}>Alphabetize</button>
+        {/* <button onClick={() => sortCartForView()}>Alphabetize</button> */}
       </div>
     </div>
   );

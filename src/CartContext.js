@@ -10,41 +10,55 @@ export const CartContextProvider = ({ children }) => {
 
   // ** This should recieve an arr of arr[id,type,price]
   // might need to get rid of this
-  const alphabetizeCart = (arr) => {
-    setInventory(
-      arr.sort((a, b) => {
-        return a[1].localeCompare(b[1]);
-      })
-    );
-    console.log(inventory);
+  // const alphabetizeCart = (arr) => {
+  //   let arrQueue = arr;
+  //   arrQueue.sort((a, b) => {
+  //     return a[1].localeCompare(b[1]);
+  //   });
+
+  //   console.log(inventory);
+  //   return arrQueue;
+  // };
+
+  const handleInventoryChange = (arr) => {
+    let arrQueue = arr;
+    arrQueue.sort((a, b) => {
+      return a[1].localeCompare(b[1]);
+    });
+
+    setCartItems(arr);
   };
 
   const addItemToCart = (item) => {
-    setCartItems((current) => [...current, [item[0], item[1], item[2]]]);
+    let arrQueue = [...cart, [item[0], item[1], item[2]]];
+
+    handleInventoryChange(arrQueue);
+
+    // setCartItems((current) => [...current, [item[0], item[1], item[2]]]);
     setTotal(total + parseFloat(item[2]));
   };
 
   // receive [id,type,price]
   // TODO As a result of this implementation, the displayed list reorders every time :(
+  //! Need to refactor this, this is super annoying
+  // receives arr[id,type,price]
   const removeItemFromCart = (item) => {
     let positiveMatch = cart.filter((arr) => {
       return arr[0] === item[0];
     });
-
     if (positiveMatch.length > 0) {
       setTotal(total - item[2]);
     } else {
       console.log("No item");
     }
     positiveMatch.pop();
-
     const negativeMatch = cart.filter((arr) => {
       return arr[0] !== item[0];
     });
-
     let completedFilter = [...positiveMatch, ...negativeMatch];
-
-    setCartItems(completedFilter);
+    //setcartitems should be in a function that sorts and then setcartitems
+    // setCartItems(completedFilter);
+    handleInventoryChange(completedFilter);
   };
 
   const clearCart = () => {
@@ -72,7 +86,7 @@ export const CartContextProvider = ({ children }) => {
     inventory,
     setInventory,
     counter,
-    alphabetizeCart,
+    // alphabetizeCart,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
