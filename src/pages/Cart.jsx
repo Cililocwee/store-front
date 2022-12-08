@@ -3,19 +3,12 @@ import { CartContext } from "../CartContext";
 import VariableInput from "../components/VariableInput";
 
 export default function Cart() {
-  const {
-    total,
-    clearCart,
-    addItemToCart,
-    setCartItems,
-    removeItemFromCart,
-    cart,
-    counter,
-  } = useContext(CartContext);
+  const { total, clearCart, addItemToCart, removeItemFromCart, cart } =
+    useContext(CartContext);
 
-  const arr = cart;
+  // const arr = cart;
   const counts = {};
-  for (const num of arr) {
+  for (const num of cart) {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
   }
 
@@ -32,12 +25,14 @@ export default function Cart() {
                 <VariableInput
                   item={key.split(",")[1]}
                   number={counts[key.split(",")]}
-                  decrement={() => console.log("hi")}
+                  decrement={() => removeItemFromCart(key.split(","))}
+                  increment={() => addItemToCart(key.split(","))}
                 />
               </li>
             );
           })}
         </ul>
+        {/* TODO: Total should always be in the format of $x.xx */}
         <div className="total-box">Total: ${total}</div>
         <button
           id="check-out"

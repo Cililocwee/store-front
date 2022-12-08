@@ -1,15 +1,17 @@
 .navbar {
-  /* background-color: gray; */
+  align-items: center;
+  background-color: gray;
   background-color: var(--primary-color);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  height: 100px;
-  font-size: 2em;
   filter: drop-shadow(5px 5px 5px black);
+  font-size: 2em;
+  height: 100px;
+  justify-content: space-between;
+  padding: 0 20px;
   position: relative;
   z-index: 99;
+
+  /*  */
 }
 
 .navbar img {
@@ -19,19 +21,22 @@
 
 .nav-links {
   display: flex;
+  height: 100%;
   justify-content: space-between;
   width: 40%;
-  height: 100%;
 }
 
 .nav-link {
-  height: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  flex-shrink: 4;
+  height: 100%;
+  justify-content: center;
+  min-width: 50px;
   padding: 0 10px;
-  /* flex-shrink: 4; */
-  /* min-width: 50px; */
+
+  /*  */
+  /*  */
 }
 
 .nav-link:hover {
@@ -45,22 +50,22 @@
 }
 
 .navbar a {
-  height: 100%;
   display: flex;
+  height: 100%;
   justify-content: center;
 }
 
 #logobox {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   gap: 15px;
+  justify-content: center;
 }
 
 #shoppingcart {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 #shoppingcart img {
@@ -78,15 +83,17 @@
 }
 
 .dropdown-wrapper {
-  display: none;
-  flex-direction: column;
-  width: 5em;
-  position: relative;
-  margin: auto;
   background-color: var(--primary-color);
+  border: 1px solid var(--card-highlight);
+  display: none;
+  filter: drop-shadow(0px 2px 5px black);
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+  width: 5em;
 
-  /* border: 1px solid var(--card-highlight); */
-  /* filter: drop-shadow(0px 2px 5px black); */
+  /*  */
+  /*  */
 }
 
 .dropdown-wrapper:hover,
@@ -97,11 +104,11 @@
 .dropdown {
   display: flex;
   flex-direction: column;
+  gap: 0.5em;
+  margin-top: 1em;
+  padding: 0.25em;
   position: relative;
   transition: 0.5s;
-  margin-top: 1em;
-  gap: 0.5em;
-  padding: 0.25em;
 }
 
 #folded {
