@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.742c951f.css",
-    "main.js": "/static/js/main.b5c22e5d.js",
+    "main.css": "/static/css/main.9e46f7d3.css",
+    "main.js": "/static/js/main.70861864.js",
     "static/media/caramelmacchiato.jpg": "/static/media/caramelmacchiato.059320e25f568aa91bf7.jpg",
     "static/media/rochercupcake.jpg": "/static/media/rochercupcake.22d04e1857be296b9794.jpg",
     "static/media/latte.jpg": "/static/media/latte.44524daa6ffcefd07bda.jpg",
@@ -12,15 +12,14 @@
     "static/media/cafesplash.jpg": "/static/media/cafesplash.9193c72a24b35d4e47ae.jpg",
     "static/media/americano.jpg": "/static/media/americano.a828c48e74387935c002.jpg",
     "static/media/tea.svg": "/static/media/tea.773750384f60a7d453ceedc3cf19b5f1.svg",
-    "static/media/addtocart.svg": "/static/media/addtocart.77b157dadb494d932944.svg",
     "static/media/shoppingcart.svg": "/static/media/shoppingcart.152a1f71969e5a33753d465a17f4b9b3.svg",
     "static/media/menuicon.svg": "/static/media/menuicon.c3c7f0f0bb3603f16e85b242c21b6a44.svg",
     "index.html": "/index.html",
-    "main.742c951f.css.map": "/static/css/main.742c951f.css.map",
-    "main.b5c22e5d.js.map": "/static/js/main.b5c22e5d.js.map"
+    "main.9e46f7d3.css.map": "/static/css/main.9e46f7d3.css.map",
+    "main.70861864.js.map": "/static/js/main.70861864.js.map"
   },
   "entrypoints": [
-    "static/css/main.742c951f.css",
-    "static/js/main.b5c22e5d.js"
+    "static/css/main.9e46f7d3.css",
+    "static/js/main.70861864.js"
   ]
 }
