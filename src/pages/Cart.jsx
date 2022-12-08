@@ -1,16 +1,48 @@
 import React, { useContext } from "react";
+import { useState } from "react";
 import { CartContext } from "../CartContext";
 import VariableInput from "../components/VariableInput";
 
 export default function Cart() {
-  const { total, clearCart, addItemToCart, removeItemFromCart, cart } =
-    useContext(CartContext);
+  const {
+    alphabetizeCart,
+    total,
+    clearCart,
+    addItemToCart,
+    removeItemFromCart,
+    cart,
+    setInventory,
+    inventory,
+  } = useContext(CartContext);
 
-  // const arr = cart;
+  // an array [id,type,price,count]
+  const [countDisplay, setCountDisplay] = useState([]);
+
+  // TODO I need counts to be a state so everything rerenders when it changes
   const counts = {};
   for (const num of cart) {
     counts[num] = counts[num] ? counts[num] + 1 : 1;
   }
+
+  const sortCartForView = () => {
+    // I need an array here [id,type,price,count]
+    // ** This should be used in more places
+    let invArr = Object.entries(counts);
+    let semiSortedInvArr = [];
+    invArr.forEach((entry) => {
+      semiSortedInvArr.push([...entry[0].split(","), entry[1]]);
+    });
+
+    console.log(semiSortedInvArr);
+
+    // sort the semiSortedInvArr
+    semiSortedInvArr.sort((a, b) => {
+      return a[1].localeCompare(b[1]);
+    });
+
+    console.log(semiSortedInvArr);
+    setCountDisplay(semiSortedInvArr);
+  };
 
   return (
     <div className="content">
@@ -18,7 +50,6 @@ export default function Cart() {
         Items in cart:
         <ul>
           {Object.keys(counts).map((key) => {
-            console.log(counts);
             return (
               <li>
                 {/* Still need to implement clicks */}
@@ -27,6 +58,22 @@ export default function Cart() {
                   number={counts[key.split(",")]}
                   decrement={() => removeItemFromCart(key.split(","))}
                   increment={() => addItemToCart(key.split(","))}
+                />
+              </li>
+            );
+          })}
+
+          {countDisplay.map((key) => {
+            return (
+              <li>
+                <VariableInput
+                  item={key[1]}
+                  number={key[3]}
+                  decrement={() => {
+                    removeItemFromCart(key);
+                    sortCartForView();
+                  }}
+                  increment={() => addItemToCart(key)}
                 />
               </li>
             );
@@ -45,6 +92,7 @@ export default function Cart() {
         <button id="cart-clear" onClick={clearCart}>
           Clear Cart
         </button>
+        <button onClick={() => sortCartForView()}>Alphabetize</button>
       </div>
     </div>
   );

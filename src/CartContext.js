@@ -9,10 +9,14 @@ export const CartContextProvider = ({ children }) => {
   const [inventory, setInventory] = useState({});
 
   // ** This should recieve an arr of arr[id,type,price]
+  // might need to get rid of this
   const alphabetizeCart = (arr) => {
-    arr.sort((a, b) => {
-      return a[1].localeCompare(b[1]);
-    });
+    setInventory(
+      arr.sort((a, b) => {
+        return a[1].localeCompare(b[1]);
+      })
+    );
+    console.log(inventory);
   };
 
   const addItemToCart = (item) => {
@@ -68,6 +72,7 @@ export const CartContextProvider = ({ children }) => {
     inventory,
     setInventory,
     counter,
+    alphabetizeCart,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
