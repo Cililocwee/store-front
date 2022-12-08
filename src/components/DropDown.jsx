@@ -9,7 +9,7 @@ export default function DropDown() {
   const [viewState, setViewState] = useState("folded");
   const { cart } = useContext(CartContext);
 
-  function handleClick(e) {
+  function handleClick() {
     if (viewState === "folded") {
       setViewState("unfolded");
     } else if (viewState === "unfolded") {

@@ -2,7 +2,7 @@ import React from "react";
 import DrinkCard from "../components/DrinkCard";
 import foods from "../menuitems/foodData";
 
-export default function FoodPage({ type, drinkdata }) {
+export default function FoodPage() {
   return (
     <div className="page-wrapper">
       <div className="page-title">Food</div>
@@ -14,6 +14,7 @@ export default function FoodPage({ type, drinkdata }) {
               description={food.description}
               image={food.picture}
               price={food.price}
+              id={food.id}
             />
           );
         })}

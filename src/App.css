@@ -11,7 +11,7 @@
   width: 20em;
   height: fit-content;
   border: 1px solid var(--card-background);
-  margin: 30px;
+  margin: 30px 30px 0px 30px;
   filter: drop-shadow(10px 10px 4px black);
   background-color: var(--card-background);
   border-radius: 16px;
@@ -31,22 +31,6 @@
 .price {
   font-size: 1.5em;
   padding-top: 5px;
-}
-.add-btn {
-  opacity: 0;
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  top: 0;
-  background-image: url("./assets/addtocart.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.5s;
-}
-
-.drinkcard:hover .add-btn {
-  opacity: 75%;
-  top: 30%;
 }
 
 .drink-type {
@@ -100,6 +84,14 @@
   padding: 0.5em;
 }
 
+.add-remove-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+}
+
 @media (max-width: 780px) {
   .drinkcard {
     width: 10em;
@@ -120,13 +112,6 @@
     position: relative;
     padding: 10px 5px;
     background-color: var(--primary-color);
-  }
-
-  .drinkcard:hover .add-btn {
-    opacity: 75%;
-    top: 15%;
-    z-index: 99;
-    width: 50%;
   }
 
   .drinkcard:hover .drink-description {
