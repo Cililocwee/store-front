@@ -12,10 +12,10 @@ function App() {
   return (
     <CartContextProvider>
       <div className="App">
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <NavBar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/tea" element={<TeaPage />} />
             <Route path="/coffee" element={<CoffeePage />} />
