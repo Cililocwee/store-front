@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/store-front/home/static/css/main.4f003c3d.css",
-    "main.js": "/store-front/home/static/js/main.cdc64775.js",
-    "static/media/caramelmacchiato.jpg": "/store-front/home/static/media/caramelmacchiato.059320e25f568aa91bf7.jpg",
-    "static/media/rochercupcake.jpg": "/store-front/home/static/media/rochercupcake.22d04e1857be296b9794.jpg",
-    "static/media/latte.jpg": "/store-front/home/static/media/latte.44524daa6ffcefd07bda.jpg",
-    "static/media/chocolatecaramelcupcake.jpg": "/store-front/home/static/media/chocolatecaramelcupcake.afb7a3cd20f7ced6d9c8.jpg",
-    "static/media/appletea.jpg": "/store-front/home/static/media/appletea.af1e136d43a7bd2ece1c.jpg",
-    "static/media/berrytart.jpg": "/store-front/home/static/media/berrytart.555df731350875046b5b.jpg",
-    "static/media/minttea.jpg": "/store-front/home/static/media/minttea.60da62748bd9371b9816.jpg",
-    "static/media/cafesplash.jpg": "/store-front/home/static/media/cafesplash.9193c72a24b35d4e47ae.jpg",
-    "static/media/americano.jpg": "/store-front/home/static/media/americano.a828c48e74387935c002.jpg",
-    "static/media/tea.svg": "/store-front/home/static/media/tea.773750384f60a7d453ceedc3cf19b5f1.svg",
-    "static/media/shoppingcart.svg": "/store-front/home/static/media/shoppingcart.152a1f71969e5a33753d465a17f4b9b3.svg",
-    "index.html": "/store-front/home/index.html",
-    "static/media/menuicon.svg": "/store-front/home/static/media/menuicon.c3c7f0f0bb3603f16e85b242c21b6a44.svg",
-    "main.4f003c3d.css.map": "/store-front/home/static/css/main.4f003c3d.css.map",
-    "main.cdc64775.js.map": "/store-front/home/static/js/main.cdc64775.js.map"
+    "main.css": "/store-front/static/css/main.ef84df82.css",
+    "main.js": "/store-front/static/js/main.4fdc020f.js",
+    "static/media/caramelmacchiato.jpg": "/store-front/static/media/caramelmacchiato.059320e25f568aa91bf7.jpg",
+    "static/media/rochercupcake.jpg": "/store-front/static/media/rochercupcake.22d04e1857be296b9794.jpg",
+    "static/media/latte.jpg": "/store-front/static/media/latte.44524daa6ffcefd07bda.jpg",
+    "static/media/chocolatecaramelcupcake.jpg": "/store-front/static/media/chocolatecaramelcupcake.afb7a3cd20f7ced6d9c8.jpg",
+    "static/media/appletea.jpg": "/store-front/static/media/appletea.af1e136d43a7bd2ece1c.jpg",
+    "static/media/berrytart.jpg": "/store-front/static/media/berrytart.555df731350875046b5b.jpg",
+    "static/media/minttea.jpg": "/store-front/static/media/minttea.60da62748bd9371b9816.jpg",
+    "static/media/cafesplash.jpg": "/store-front/static/media/cafesplash.9193c72a24b35d4e47ae.jpg",
+    "static/media/americano.jpg": "/store-front/static/media/americano.a828c48e74387935c002.jpg",
+    "static/media/tea.svg": "/store-front/static/media/tea.773750384f60a7d453ceedc3cf19b5f1.svg",
+    "static/media/shoppingcart.svg": "/store-front/static/media/shoppingcart.152a1f71969e5a33753d465a17f4b9b3.svg",
+    "index.html": "/store-front/index.html",
+    "static/media/menuicon.svg": "/store-front/static/media/menuicon.c3c7f0f0bb3603f16e85b242c21b6a44.svg",
+    "main.ef84df82.css.map": "/store-front/static/css/main.ef84df82.css.map",
+    "main.4fdc020f.js.map": "/store-front/static/js/main.4fdc020f.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f003c3d.css",
-    "static/js/main.cdc64775.js"
+    "static/css/main.ef84df82.css",
+    "static/js/main.4fdc020f.js"
   ]
 }
