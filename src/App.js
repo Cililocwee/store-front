@@ -7,21 +7,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CoffeePage from "./pages/CoffeePage";
 import FoodPage from "./pages/FoodPage";
 import { CartContextProvider } from "./CartContext";
+import MenuPage from "./pages/MenuPage";
 
 function App() {
   return (
     <CartContextProvider>
       <div className="App">
-        {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
         <NavBar />
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/tea" element={<TeaPage />} />
+          <Route path="/menu" element={<MenuPage />} />
           <Route path="/coffee" element={<CoffeePage />} />
           <Route path="/food" element={<FoodPage />} />
         </Routes>
-        {/* </BrowserRouter> */}
       </div>
     </CartContextProvider>
   );
