@@ -175,3 +175,23 @@
   background-color: rgba(0, 0, 0, 0.55);
   color: var(--card-highlight);
 }
+
+.menu-input {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2em;
+  color: red;
+  background-color: aliceblue;
+  width: 200px;
+  padding: 10px;
+  border-radius: 16px;
+  z-index: 999;
+  filter: drop-shadow(5px 5px 15px black);
+}
+
+.menu-input button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}

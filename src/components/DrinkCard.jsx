@@ -21,6 +21,7 @@ export default function DrinkCard({ type, image, description, price, id }) {
       </div>
       <div className="add-remove-btn">
         <VariableInput
+          className="menu-input"
           increment={() => addItemToCart([id, type, price])}
           decrement={() => removeItemFromCart([id, type, price])}
           number={counter[id]}

@@ -5,11 +5,12 @@ export default function VariableInput({
   item,
   increment,
   decrement,
+  className = "receipt-input",
 }) {
   return (
     <div>
       <div className="receipt-line">
-        <div className="receipt-input">
+        <div className={className}>
           <button onClick={increment}>+ </button>
           <span>{number}</span>
           <button onClick={decrement}>-</button>

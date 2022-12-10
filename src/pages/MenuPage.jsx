@@ -56,7 +56,7 @@ export default function MenuPage() {
             id="all-view"
             display="All"
             onClick={() => changeViewToAll()}
-          />
+          />{" "}
           <MenuLink
             className="menu-link"
             id="tea-view"
