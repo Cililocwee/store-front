@@ -21,12 +21,14 @@ export default function Cart() {
             {Object.keys(counts).map((key) => {
               return (
                 <li>
-                  <VariableInput
-                    item={key.split(",")[1]}
-                    number={counts[key.split(",")]}
-                    decrement={() => removeItemFromCart(key.split(","))}
-                    increment={() => addItemToCart(key.split(","))}
-                  />
+                  <div className="receipt-line">
+                    <VariableInput
+                      item={key.split(",")[1]}
+                      number={counts[key.split(",")]}
+                      decrement={() => removeItemFromCart(key.split(","))}
+                      increment={() => addItemToCart(key.split(","))}
+                    />
+                  </div>
                 </li>
               );
             })}

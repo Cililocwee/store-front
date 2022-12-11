@@ -29,19 +29,24 @@ export default function DropDown() {
         alt="drop down"
       />
       <div className="dropdown" id={viewState}>
-        <Link to="/tea">
+        <Link to="/home">
           <span onClick={handleClick} className="nav-link">
-            Tea
+            Home
           </span>
         </Link>
-        <Link to="/coffee">
+        <Link to="/menu">
           <span onClick={handleClick} className="nav-link">
-            Coffee
+            Menu
           </span>
         </Link>
-        <Link to="/food">
+        <Link to="/contact">
           <span onClick={handleClick} className="nav-link">
-            Food
+            Contact
+          </span>
+        </Link>
+        <Link to="/about">
+          <span onClick={handleClick} className="nav-link">
+            About
           </span>
         </Link>
         <Link to="/cart">

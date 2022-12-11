@@ -14,10 +14,10 @@ export default function NavLinks() {
       <Link to="/menu">
         <span className="nav-link">Menu</span>
       </Link>
-      <Link>
+      <Link to="/contact">
         <span className="nav-link">Contact</span>
       </Link>
-      <Link to="/home">
+      <Link to="/about">
         <span className="nav-link">About</span>
       </Link>
       <Link to="/cart">

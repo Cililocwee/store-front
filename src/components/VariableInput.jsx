@@ -8,15 +8,13 @@ export default function VariableInput({
   className = "receipt-input",
 }) {
   return (
-    <div>
-      <div className="receipt-line">
-        <div className={className}>
-          <button onClick={increment}>+ </button>
-          <span>{number}</span>
-          <button onClick={decrement}>-</button>
-        </div>
-        <div className="receipt-item">{item}</div>
+    <>
+      <div className={className}>
+        <button onClick={increment}>+ </button>
+        <span>{number}</span>
+        <button onClick={decrement}>-</button>
       </div>
-    </div>
+      <div className="receipt-item">{item}</div>
+    </>
   );
 }
