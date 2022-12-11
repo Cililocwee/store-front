@@ -8,6 +8,7 @@ import { CartContextProvider } from "./CartContext";
 import MenuPage from "./pages/MenuPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
+        <Footer />
       </div>
     </CartContextProvider>
   );

@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #bc4749;
-  --background-color: #f2e8cf;
-  --card-background: #a7c957;
-  --card-highlight: #6a994e;
-  --card-label: #386641;
+  --primary-color: #9e2a2b;
+  --background-color: #fff3b0;
+  --card-background: #dda15e;
+  --card-highlight: #540b0e;
+  --card-label: #9e2a2b;
   --font-on-primary: #000000;
   --font-on-dark: #f0f8ff;
   --global-font: "Josefin Sans";

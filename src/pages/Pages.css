@@ -41,18 +41,19 @@
   display: flex;
   flex-direction: column;
   height: fit-content;
+  width: 100%;
 }
 
 .cart-wrapper {
   align-items: center;
   background-color: var(--card-background);
-  border-radius: 16px;
-  border: 3px solid var(--card-highlight);
+  /* border-radius: 16px; */
+  /* border: 3px solid var(--card-highlight); */
   display: flex;
   filter: drop-shadow(5px 5px 5px black);
   flex-direction: column;
   font-size: 2em;
-  margin: 25px;
+  margin: 150px auto;
   min-width: 300px;
   padding: 25px;
   width: fit-content;
@@ -75,19 +76,13 @@
   margin: 10px;
 }
 
-.cart-item:hover {
-  color: darkred;
-  cursor: pointer;
-  text-decoration: line-through;
-}
-
 .cancel-btn {
   width: 15px;
 }
 
 .total-box {
   background-color: var(--card-highlight);
-  border: 3px solid var(--card-label);
+  border: 1px solid var(--card-label);
   color: var(--font-on-dark);
   margin-bottom: 15px;
   padding: 15px 15px 5px 15px;
@@ -107,7 +102,7 @@
 }
 
 #cart-clear {
-  background-color: red;
+  background-color: var(--primary-color);
   border-radius: 5px;
   font-family: var(--global-font);
   font-size: 0.75em;
@@ -130,6 +125,7 @@
 
 .receipt-item {
   text-align: center;
+  padding: 0 10px;
 }
 
 .receipt-input {
@@ -163,6 +159,7 @@
   background-color: rgba(255, 255, 255, 0.65);
   width: 100%;
   height: 100px;
+  margin-top: 100px;
   cursor: pointer;
 }
 
@@ -224,10 +221,19 @@
   margin: 5px;
 }
 
+.menu-page {
+  margin-bottom: 25px;
+}
 @media (max-width: 780px) {
   .menu-links {
     font-size: 1.5em;
   }
-}
 
-/* TODO page still has encroaching margin on right when scaling*/
+  .cart-wrapper {
+    padding: 15px;
+  }
+
+  .receipt-item {
+    max-width: 200px;
+  }
+}

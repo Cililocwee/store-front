@@ -5,7 +5,7 @@ import uuid4 from "uuid4";
 
 const food = [
   {
-    type: "Berry tart",
+    type: "Berry Tart",
     picture: BerryTart,
     description:
       "A lovely seasonal berry tart with locally sourced berries. Best with a warm drink!",

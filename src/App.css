@@ -1,12 +1,13 @@
 .App {
   height: 100vh;
   width: 100%;
+  position: relative;
 }
 .drinkcard {
   align-items: center;
   background-color: var(--card-background);
   border-radius: 16px;
-  border: 1px solid var(--card-background);
+  /* border: 1px solid var(--card-background); */
   display: flex;
   filter: drop-shadow(10px 10px 4px black);
   flex-direction: column;
@@ -87,4 +88,15 @@
 }
 
 @media (max-width: 780px) {
+}
+
+.footer {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #000000d9;
+  color: var(--font-on-dark);
 }
