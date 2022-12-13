@@ -2,26 +2,27 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
-import TeaPage from "./pages/TeaPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CoffeePage from "./pages/CoffeePage";
-import FoodPage from "./pages/FoodPage";
+
+import { Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./CartContext";
+import MenuPage from "./pages/MenuPage";
+import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <CartContextProvider>
       <div className="App">
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <NavBar />
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/tea" element={<TeaPage />} />
-            <Route path="/coffee" element={<CoffeePage />} />
-            <Route path="/food" element={<FoodPage />} />
-          </Routes>
-        </BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+        <Footer />
       </div>
     </CartContextProvider>
   );

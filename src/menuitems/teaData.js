@@ -10,7 +10,7 @@ const teas = [
     id: uuid4(),
   },
   {
-    type: "Mint tea",
+    type: "Mint Tea",
     picture: MintTea,
     description:
       "A rustic soothing tea; good for a sore throat or a cold winter's day.",

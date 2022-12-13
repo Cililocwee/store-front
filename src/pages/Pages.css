@@ -1,3 +1,32 @@
+.about-page,
+.homepage,
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: auto;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.back-drop {
+  /* background-image: url("../assets/caferelax.jpg"); */
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  display: flex;
+}
+
 .homepage {
   align-items: center;
   display: flex;
@@ -20,18 +49,19 @@
   display: flex;
   flex-direction: column;
   height: fit-content;
+  width: 100%;
 }
 
 .cart-wrapper {
   align-items: center;
   background-color: var(--card-background);
-  border-radius: 16px;
-  border: 3px solid var(--card-highlight);
+  /* border-radius: 16px; */
+  /* border: 3px solid var(--card-highlight); */
   display: flex;
   filter: drop-shadow(5px 5px 5px black);
   flex-direction: column;
   font-size: 2em;
-  margin: 25px;
+  margin: 150px auto;
   min-width: 300px;
   padding: 25px;
   width: fit-content;
@@ -54,19 +84,35 @@
   margin: 10px;
 }
 
-.cart-item:hover {
-  color: darkred;
-  cursor: pointer;
-  text-decoration: line-through;
-}
-
 .cancel-btn {
   width: 15px;
 }
 
+.contact-map {
+  display: flex;
+  width: 100%;
+}
+
+.contact-map ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opening-hours {
+  margin: auto;
+  width: 100%;
+}
+
+.contact-map ul {
+  list-style: none;
+  padding: 25px;
+  margin: auto;
+}
+
 .total-box {
   background-color: var(--card-highlight);
-  border: 3px solid var(--card-label);
+  border: 1px solid var(--card-label);
   color: var(--font-on-dark);
   margin-bottom: 15px;
   padding: 15px 15px 5px 15px;
@@ -86,7 +132,7 @@
 }
 
 #cart-clear {
-  background-color: red;
+  background-color: var(--primary-color);
   border-radius: 5px;
   font-family: var(--global-font);
   font-size: 0.75em;
@@ -109,6 +155,7 @@
 
 .receipt-item {
   text-align: center;
+  padding: 0 10px;
 }
 
 .receipt-input {
@@ -121,4 +168,113 @@
   justify-content: space-between;
   padding: 2px;
   width: 75px;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.page-title {
+  font-size: 4em;
+  padding: 0.5em;
+  margin: 0 auto;
+  text-transform: capitalize;
+}
+
+.menu-selection {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.65);
+  width: 100%;
+  height: 100px;
+  margin-top: 100px;
+  cursor: pointer;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 25px;
+}
+.menu-link:hover {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: var(--card-highlight);
+}
+
+.menu-links {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  font-size: 2em;
+  list-style: none;
+  overflow: hidden;
+}
+
+.menu-wrapper {
+  grid-column: 2;
+}
+
+.menu-active {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: var(--card-highlight);
+}
+
+.menu-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2em;
+  color: var(--primary-color);
+  background-color: var(--card-background);
+  border: 1px solid var(--card-background);
+  border-top: 0px;
+  width: 100%;
+  padding: 0 10px;
+  border-radius: 0 0 16px 16px;
+  /* filter: drop-shadow(10px 7px 4px black); */
+}
+
+.menu-input button {
+  height: 50px;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  font-size: 2em;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.menu-page {
+  margin-bottom: 25px;
+}
+@media (max-width: 780px) {
+  .menu-links {
+    font-size: 1.5em;
+  }
+
+  .cart-wrapper {
+    padding: 15px;
+  }
+
+  .receipt-item {
+    max-width: 200px;
+  }
+
+  .contact-map {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .contact-map li,
+  ul {
+    padding: 0;
+  }
 }
