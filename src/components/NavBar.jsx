@@ -9,7 +9,7 @@ import NavLinks from "./NavLinks";
 export default function NavBar() {
   return (
     <div className="navbar">
-      <Link to="/home">
+      <Link to="/">
         <div id="logobox">
           <img alt="tea logo" src={TeaLogo} />
           <span id="storename">Tea Time</span>

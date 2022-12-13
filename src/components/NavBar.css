@@ -37,7 +37,7 @@
 
 .nav-link:hover {
   background-color: rgba(0, 0, 0, 0.55);
-  color: var(--card-highlight);
+  color: var(--card-background);
 }
 
 .navbar a {

@@ -1,5 +1,6 @@
 .about-page,
-.homepage {
+.homepage,
+.contact-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,6 +9,13 @@
   margin: auto;
   padding: 25px;
   background-color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .back-drop {
@@ -78,6 +86,28 @@
 
 .cancel-btn {
   width: 15px;
+}
+
+.contact-map {
+  display: flex;
+  width: 100%;
+}
+
+.contact-map ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opening-hours {
+  margin: auto;
+  width: 100%;
+}
+
+.contact-map ul {
+  list-style: none;
+  padding: 25px;
+  margin: auto;
 }
 
 .total-box {
@@ -235,5 +265,16 @@
 
   .receipt-item {
     max-width: 200px;
+  }
+
+  .contact-map {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .contact-map li,
+  ul {
+    padding: 0;
   }
 }
