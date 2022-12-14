@@ -9,6 +9,7 @@
   margin: auto;
   padding: 25px;
   background-color: rgba(255, 255, 255, 0.4);
+  height: fit-content;
 }
 
 .contact-information {
@@ -251,9 +252,6 @@
   margin: 5px;
 }
 
-.menu-page {
-  margin-bottom: 25px;
-}
 @media (max-width: 780px) {
   .menu-links {
     font-size: 1.5em;
@@ -273,8 +271,23 @@
     text-align: center;
     width: 100%;
   }
+
   .contact-map li,
   ul {
     padding: 0;
+  }
+
+  .about-page,
+  .homepage,
+  .contact-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    height: fit-content;
+    margin: 150px 50px 0;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 }

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
 import BackDrop from "../components/BackDrop";
 import VariableInput from "../components/VariableInput";
-import CartBG from "../assets/menubackground.jpg";
+import CartBG from "../assets/cartbackground.jpg";
 
 export default function Cart() {
   const { total, clearCart, addItemToCart, removeItemFromCart, cart } =

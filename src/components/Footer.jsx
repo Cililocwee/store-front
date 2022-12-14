@@ -1,9 +1,6 @@
 import React from "react";
 import LinkedIn from "../assets/linkedin.svg";
 import Github from "../assets/github.svg";
-import { Link } from "react-router-dom";
-import TeaLogo from "../assets/tea.svg";
-import DropDown from "./DropDown";
 
 import NavLinks from "./NavLinks";
 
@@ -16,10 +13,6 @@ export default function Footer() {
         </div>
         <div className="bot-nav-list">
           <NavLinks />
-          {/* <li>Home</li>
-            <li>Menu</li>
-            <li>About</li>
-            <li>Contact</li> */}
         </div>
       </div>
       <div className="site-info">

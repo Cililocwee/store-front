@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import TeaLogo from "../assets/tea.svg";

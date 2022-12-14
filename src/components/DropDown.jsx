@@ -29,7 +29,7 @@ export default function DropDown() {
         alt="drop down"
       />
       <div className="dropdown" id={viewState}>
-        <Link to="/home">
+        <Link to="/">
           <span onClick={handleClick} className="nav-link">
             Home
           </span>

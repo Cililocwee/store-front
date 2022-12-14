@@ -5,6 +5,8 @@ import MenuLink from "../components/MenuLink";
 import coffees from "../menuitems/coffeeData";
 import foods from "../menuitems/foodData";
 import teas from "../menuitems/teaData";
+import MenuBG from "../assets/menubackground.jpg";
+import BackDrop from "../components/BackDrop";
 
 export default function MenuPage() {
   const all = [...coffees, ...foods, ...teas];
@@ -77,8 +79,9 @@ export default function MenuPage() {
           />
         </div>
       </div>
-
-      <MenuCard viewName={viewType} viewArr={menuDisplay} />
+      <BackDrop background={MenuBG}>
+        <MenuCard viewName={viewType} viewArr={menuDisplay} />
+      </BackDrop>
     </div>
   );
 }
