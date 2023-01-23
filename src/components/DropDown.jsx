@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import "./NavBar.css";
 import { Link } from "react-router-dom";
 import ShoppingCart from "../assets/shoppingcart.svg";
 import MenuIcon from "../assets/menuicon.svg";

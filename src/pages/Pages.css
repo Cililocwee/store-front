@@ -1,16 +1,33 @@
-.about-page,
-.homepage,
-.contact-page {
+/** PAGES **/
+
+.page {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  min-height: 100%;
+  max-width: 1080px;
+  margin: auto;
+  padding: 25px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+
+.main-blurb,
+.secondary-blurb {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   max-width: 500px;
-  margin: auto;
-  padding: 25px;
-  background-color: rgba(255, 255, 255, 0.4);
-  height: fit-content;
+  padding: 1em;
+  height: 100%;
+  flex-grow: 1;
+  margin-right: auto;
 }
+
+/** CONTACT PAGE **/
 
 .contact-information {
   display: flex;
@@ -18,77 +35,6 @@
   align-items: center;
   text-align: center;
 }
-
-.back-drop {
-  /* background-image: url("../assets/caferelax.jpg"); */
-  background-position: center;
-  background-size: cover;
-  height: 100%;
-  margin: 0;
-  display: flex;
-}
-
-.homepage {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.home-splash {
-  background-image: url("../assets/cafesplash.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  filter: drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.5));
-  height: 400px;
-  margin: 30px auto;
-  width: 75%;
-}
-
-.content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-  width: 100%;
-}
-
-.cart-wrapper {
-  align-items: center;
-  background-color: var(--card-background);
-  /* border-radius: 16px; */
-  /* border: 3px solid var(--card-highlight); */
-  display: flex;
-  filter: drop-shadow(5px 5px 5px black);
-  flex-direction: column;
-  font-size: 2em;
-  margin: 150px auto;
-  min-width: 300px;
-  padding: 25px;
-  width: fit-content;
-  z-index: 0;
-}
-
-.cart-wrapper > button {
-  filter: drop-shadow(5px 5px 5px black);
-  margin: 5px;
-  width: fit-content;
-}
-
-.cart-wrapper ul {
-  list-style: none;
-  padding: 0;
-}
-
-.cart-item {
-  border-bottom: 1px dashed var(--card-label);
-  margin: 10px;
-}
-
-.cancel-btn {
-  width: 15px;
-}
-
 .contact-map {
   display: flex;
   width: 100%;
@@ -109,79 +55,6 @@
   list-style: none;
   padding: 25px;
   margin: auto;
-}
-
-.total-box {
-  background-color: var(--card-highlight);
-  border: 1px solid var(--card-label);
-  color: var(--font-on-dark);
-  margin-bottom: 15px;
-  padding: 15px 15px 5px 15px;
-  width: fit-content;
-}
-
-#check-out {
-  border-radius: 10px;
-  font-family: var(--global-font);
-  font-size: 1em;
-  padding: 15px 15px 5px 15px;
-}
-
-#check-out:hover {
-  background-color: var(--primary-color);
-  color: var(--font-on-dark);
-}
-
-#cart-clear {
-  background-color: var(--primary-color);
-  border-radius: 5px;
-  font-family: var(--global-font);
-  font-size: 0.75em;
-  margin-top: 25px;
-  padding: 5px 5px 2px 5px;
-}
-
-.receipt-line {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  width: 100%;
-}
-
-.receipt-input,
-.receipt-item {
-  margin-right: auto;
-}
-
-.receipt-item {
-  text-align: center;
-  padding: 0 10px;
-}
-
-.receipt-input {
-  align-items: center;
-  background-color: var(--font-on-dark);
-  border-radius: 5px;
-  border: 1px solid black;
-  display: flex;
-  height: 30px;
-  justify-content: space-between;
-  padding: 2px;
-  width: 75px;
-}
-
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-}
-
-.page-title {
-  font-size: 4em;
-  padding: 0.5em;
-  margin: 0 auto;
-  text-transform: capitalize;
 }
 
 /** MENU PAGE **/

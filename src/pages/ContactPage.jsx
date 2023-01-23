@@ -1,11 +1,9 @@
 import React from "react";
-import Backdrop from "../components/BackDrop";
-import Background from "../assets/contactpage.jpg";
 
 export default function ContactPage() {
   return (
-    <Backdrop background={Background}>
-      <div className="contact-page">
+    <div className="page">
+      <main id="main-contact" className="main-blurb">
         <h2>Where are we located?</h2>
         <div className="contact-information">
           <p>
@@ -38,7 +36,7 @@ export default function ContactPage() {
             </ul>
           </div>
         </div>
-      </div>
-    </Backdrop>
+      </main>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 :root {
   --primary-color: gray;
+  --primary-text: gray;
   --background-color: aliceblue;
   --card-background: white;
   --card-highlight: darkgray;
@@ -8,11 +9,15 @@
   --font-on-dark: #f0f8ff;
   --global-font: "Josefin Sans";
   font-family: var(--global-font);
+
+  --not-quite-black: black;
 }
 
+#root,
 html,
 body {
   width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }

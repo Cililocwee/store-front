@@ -6,7 +6,7 @@ import "../components/components.css";
 export default function MenuPage() {
   const { addOneItem, globalMenu, subtractOneItem } = useContext(CartContext);
   return (
-    <div id="menu-page">
+    <div id="menu-page" className="page">
       <main id="menu-wrapper">
         <section id="coffee-menu" className="menu-section">
           <div className="menu-section-header">
