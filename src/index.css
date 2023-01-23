@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #9e2a2b;
-  --background-color: #fff3b0;
-  --card-background: #dda15e;
-  --card-highlight: #540b0e;
-  --card-label: #9e2a2b;
+  --primary-color: gray;
+  --background-color: aliceblue;
+  --card-background: white;
+  --card-highlight: darkgray;
+  --card-label: darkgray;
   --font-on-primary: #000000;
   --font-on-dark: #f0f8ff;
   --global-font: "Josefin Sans";
@@ -17,4 +17,15 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
 }

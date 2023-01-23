@@ -6,25 +6,24 @@
 .drinkcard {
   align-items: center;
   background-color: var(--card-background);
-  border-radius: 16px;
+  border-radius: 6px;
   /* border: 1px solid var(--card-background); */
   display: flex;
-  filter: drop-shadow(10px 10px 4px black);
   flex-direction: column;
-  height: fit-content;
-  margin: 50px;
-  width: 20em;
+  height: 20em;
+  margin: 1em;
+  width: 10em;
   z-index: 0;
   transition: 0.5s;
 }
 
 .drinkcard:hover {
   scale: 1.01;
+  filter: drop-shadow(3px 3px 3px black);
 }
 
 .drinkcard img {
-  border-radius: 0 0 16px 16px;
-  /* height: 300px; */
+  border-radius: 0 0 6px 6px;
   position: relative;
   top: -75px;
   width: 300px;
@@ -33,41 +32,39 @@
 }
 
 .image-and-overlay {
-  height: 300px;
+  height: 100%;
   overflow: hidden;
 }
 
 .price {
-  font-size: 1.5em;
+  font-size: 1em;
   padding-top: 5px;
 }
 
 .drink-type {
   align-items: center;
   background-color: var(--card-label);
-  border-radius: 16px 16px 0 0;
+  border-radius: 6px 6px 0 0;
   color: var(--font-on-dark);
   display: flex;
-  font-size: max(2em, 1em);
-  font-weight: 600;
-  height: 50px;
+  font-size: 1.25em;
+  height: fit-content;
   justify-content: center;
   text-align: center;
   width: 100%;
+  padding: 0.25em 0;
 }
 
 .drink-description {
   align-items: center;
-  background-color: rgba(188, 71, 73, 0.5);
-  /* border-radius: 0 0 16px 16px; */
+  background-color: rgba(0, 0, 0, 0.5);
   color: var(--font-on-dark);
   display: flex;
-  font-size: 1.3em;
-  font-weight: 600;
-  height: 15%;
-  padding: 25px;
+  font-size: 1em;
+  height: fit-content;
+  box-sizing: border-box;
   position: absolute;
-  top: 60%;
+  bottom: 7em;
   transition: 0.5s;
 }
 

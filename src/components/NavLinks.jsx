@@ -20,12 +20,6 @@ export default function NavLinks() {
       <Link to="/about">
         <span className="nav-link">About</span>
       </Link>
-      <Link to="/cart">
-        <div id="shoppingcart">
-          <p id="numberincart">{cart.length}</p>
-          <img src={ShoppingCart} alt="shopping cart" />
-        </div>
-      </Link>
     </div>
   );
 }
