@@ -15,6 +15,7 @@ export const food = [
       "A lovely seasonal berry tart with locally sourced berries. Best with a warm drink!",
     itemPrice: 350,
     itemTotal: 0,
+    itemType: "food",
   },
   {
     itemName: "Chocolate Cupcake",
@@ -23,6 +24,7 @@ export const food = [
       "Decadence and delicousness! Give in to the allure of a warm chocolate embrace and a luscious caramel kiss.",
     itemPrice: 250,
     itemTotal: 0,
+    itemType: "food",
   },
   {
     itemName: "Rocher Cupcake",
@@ -31,6 +33,7 @@ export const food = [
       "Candy heaven meets bakery paradise -- get lost in the hazelnut allure of this lovely dessert.",
     itemPrice: 300,
     itemTotal: 0,
+    itemType: "food",
   },
 ];
 
@@ -41,6 +44,7 @@ export const teas = [
     itemDescription: "A lovely herbal tea made from apple and cinnamon.",
     itemPrice: 150,
     itemTotal: 0,
+    itemType: "tea",
   },
   {
     itemName: "Mint Tea",
@@ -49,6 +53,7 @@ export const teas = [
       "A rustic soothing tea; good for a sore throat or a cold winter's day.",
     itemPrice: 125,
     itemTotal: 0,
+    itemType: "tea",
   },
 ];
 
@@ -60,6 +65,7 @@ export const coffees = [
       "An espresso solo or dopplo with water. Served hot or over ice.",
     itemPrice: 250,
     itemTotal: 0,
+    itemType: "coffee",
   },
   {
     itemName: "Latte",
@@ -68,6 +74,7 @@ export const coffees = [
       "Lovingly pulled espresso mixed with fresh milk brings out a slight natural vanilla note.",
     itemPrice: 300,
     itemTotal: 0,
+    itemType: "coffee",
   },
 
   {
@@ -77,6 +84,7 @@ export const coffees = [
       "Gently steamed milk and a caramel drizzle pull this lovely invigorating drink together.",
     itemPrice: 325,
     itemTotal: 0,
+    itemType: "coffee",
   },
 ];
 

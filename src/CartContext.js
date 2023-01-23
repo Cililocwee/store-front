@@ -18,9 +18,22 @@ export const CartContextProvider = ({ children }) => {
     setGlobalMenu(queuedSet);
   }
 
+  function subtractOneItem(itemId) {
+    const queuedSet = [...globalMenu];
+    queuedSet.forEach((place) => {
+      if (place.itemName === itemId) {
+        if (place.itemTotal > 0) {
+          place.itemTotal--;
+        }
+      }
+    });
+    setGlobalMenu(queuedSet);
+  }
+
   const value = {
     globalMenu,
     addOneItem,
+    subtractOneItem,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

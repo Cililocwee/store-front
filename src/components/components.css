@@ -1,3 +1,4 @@
+/** FLOATING CART **/
 #floating-cart {
   position: fixed;
   bottom: 1em;
@@ -11,6 +12,11 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+.minified {
+  display: none;
+}
+/** MENU ITEMS **/
 
 .menu-item {
   width: 7em;
