@@ -33,21 +33,6 @@ export default function MenuPage() {
               (item) =>
                 item.itemType === "coffee" && (
                   <ItemBubble item={item} showItem={() => showInfo(item)} />
-                  // <section className="menu-item">
-                  //   <img
-                  //     src={item.itemPic}
-                  //     alt=""
-                  //     onClick={() => showInfo(item)}
-                  //   />
-                  //   <h3>{item.itemName}</h3>
-                  //   {/* <h4>{item.itemDescription}</h4> */}
-                  //   <h5>${item.itemPrice}</h5>
-                  //   <div className="amount-input">
-                  //     <AddToOrderButton
-                  //       addFnc={() => addOneItem(item.itemName)}
-                  //     />
-                  //   </div>
-                  // </section>
                 )
             )}
           </div>
@@ -61,15 +46,7 @@ export default function MenuPage() {
             {globalMenu.map(
               (item) =>
                 item.itemType === "tea" && (
-                  <section className="menu-item">
-                    <img src={item.itemPic} alt="" />
-                    <h3>{item.itemName}</h3>
-                    {/* <h4>{item.itemDescription}</h4> */}
-                    <h5>${item.itemPrice}</h5>
-                    <AddToOrderButton
-                      addFnc={() => addOneItem(item.itemName)}
-                    />
-                  </section>
+                  <ItemBubble item={item} showItem={() => showInfo(item)} />
                 )
             )}
           </div>
@@ -83,15 +60,7 @@ export default function MenuPage() {
             {globalMenu.map(
               (item) =>
                 item.itemType === "food" && (
-                  <section className="menu-item">
-                    <img src={item.itemPic} alt="" />
-                    <h3>{item.itemName}</h3>
-                    {/* <h4>{item.itemDescription}</h4> */}
-                    <h5>${item.itemPrice}</h5>
-                    <AddToOrderButton
-                      addFnc={() => addOneItem(item.itemName)}
-                    />
-                  </section>
+                  <ItemBubble item={item} showItem={() => showInfo(item)} />
                 )
             )}
           </div>
