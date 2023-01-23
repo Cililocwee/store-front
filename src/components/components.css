@@ -30,6 +30,38 @@
 .minified {
   display: none;
 }
+
+/** ITEM INFO BOX **/
+#item-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 90;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-hidden {
+  display: none;
+}
+
+.overlay-flex {
+  display: flex;
+}
+
+#item-info-box {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /** MENU ITEMS **/
 
 .menu-item {
@@ -40,8 +72,14 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin: 0.25em;
+  margin: 1em;
   transition: 0.5s;
+}
+
+.menu-item img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
 }
 
 .menu-item:hover {
