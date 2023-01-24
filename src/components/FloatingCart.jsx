@@ -57,7 +57,9 @@ export default function FloatingCart() {
         <p>Total: {totalPrice}</p>
       </section>
 
-      <button onClick={minify}>{buttonLabel}</button>
+      <button id="reveal-button" onClick={minify}>
+        {buttonLabel}
+      </button>
     </div>
   );
 }
