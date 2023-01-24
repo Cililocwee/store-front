@@ -8,6 +8,10 @@ export const CartContextProvider = ({ children }) => {
 
   const [globalMenu, setGlobalMenu] = useState([...food, ...coffees, ...teas]);
 
+  const [itemOnDisplay, setItemOnDisplay] = useState({
+    itemName: "test",
+    itemDescription: "Testing more",
+  });
   function addOneItem(itemId) {
     const queuedSet = [...globalMenu];
     queuedSet.forEach((place) => {
@@ -34,6 +38,8 @@ export const CartContextProvider = ({ children }) => {
     globalMenu,
     addOneItem,
     subtractOneItem,
+    itemOnDisplay,
+    setItemOnDisplay,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

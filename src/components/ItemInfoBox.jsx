@@ -1,10 +1,12 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
 import AddToOrderButton from "./AddToOrderButton";
 
 export default function ItemInfoBox({ item }) {
-  const { addOneItem, globalMenu } = useContext(CartContext);
+  const { addOneItem, globalMenu, itemOnDisplay } = useContext(CartContext);
 
   function hideOverlay() {
     const flyOver = document.getElementById("item-overlay");
@@ -16,6 +18,7 @@ export default function ItemInfoBox({ item }) {
     <div id="item-overlay" onClick={hideOverlay} className="overlay-hidden">
       <div id="item-info-box" className="flyover-box">
         <h4>{item}</h4>
+        <h5>{itemOnDisplay.itemDescription}</h5>
 
         <AddToOrderButton addFnc={() => addOneItem(item)} />
       </div>
