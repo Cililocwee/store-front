@@ -14,9 +14,8 @@ export default function NavBar() {
           <span id="storename">Starhill Place</span>
         </div>
       </Link>
-      <DropDown />
       <NavLinks />
-      <section className="nav-btns">
+      <section id="nav-btns">
         <button id="sign-in-btn">Sign In</button>
         <button id="join-now-btn">Join Now</button>
       </section>

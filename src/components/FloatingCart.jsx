@@ -36,9 +36,6 @@ export default function FloatingCart() {
 
   return (
     <div id="floating-cart">
-      <button onClick={minify}>{buttonLabel}</button>
-      <section id="unminified-items">In cart: {itemsInCart}</section>
-      <section id="unminified-total">Total: {totalPrice}</section>
       <div id="minified-cart-items" className="minified">
         <h5>Current cart:</h5>
         {globalMenu.map(
@@ -55,6 +52,12 @@ export default function FloatingCart() {
             )
         )}
       </div>
+      <section id="unminified-values">
+        <p>In cart: {itemsInCart}</p>
+        <p>Total: {totalPrice}</p>
+      </section>
+
+      <button onClick={minify}>{buttonLabel}</button>
     </div>
   );
 }

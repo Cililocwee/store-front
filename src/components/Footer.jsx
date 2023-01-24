@@ -1,28 +1,38 @@
 import React from "react";
 import LinkedIn from "../assets/linkedin.svg";
 import Github from "../assets/github.svg";
-
-import NavLinks from "./NavLinks";
+import Gmail from "../assets/gmail.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <div className="footer">
-      <div className="bot-nav">
-        <div className="nav-label">
-          <h3>Navigation</h3>
-        </div>
-        <div className="bot-nav-list">
-          <NavLinks />
-        </div>
-      </div>
-      <div className="site-info">
-        <p>Created by Corrie Stroup | 2022</p>
-      </div>
-      <div className="site-info-mobile">Corrie Stroup 2022</div>
-      <div className="inquiries">
-        <li>For inquiries:</li>
-        <li>corrie.stroup@gmail.com</li>
+    <div id="footer">
+      <section id="bot-nav">
+        <ul>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/menu">
+            <li>Menu</li>
+          </Link>
+          <Link to="/contact">
+            <li>Contact Us</li>
+          </Link>
+          <Link to="/about">
+            <li>About</li>
+          </Link>
+        </ul>
+      </section>
+      <section id="footer-site-information">
+        <p>©2023 Corrie Stroup</p>
+      </section>
+      <section id="inquiries">
         <div className="socials">
+          <li>
+            <a href="mailto:corrie.stroup@gmail.com">
+              <img src={Gmail} alt="" />
+            </a>
+          </li>
           <li>
             <a
               target="_blank"
@@ -42,7 +52,7 @@ export default function Footer() {
             </a>
           </li>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

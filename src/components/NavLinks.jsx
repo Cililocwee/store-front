@@ -8,7 +8,7 @@ export default function NavLinks() {
   const { cart } = useContext(CartContext);
   return (
     <div className="nav-links">
-      <Link to="/">
+      <Link to="/" id="navbar-home-label">
         <span className="nav-link">Home</span>
       </Link>
       <Link to="/menu">

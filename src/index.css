@@ -10,7 +10,7 @@
   --global-font: "Josefin Sans";
   font-family: var(--global-font);
 
-  --not-quite-black: black;
+  --not-quite-black: gray;
 }
 
 #root,

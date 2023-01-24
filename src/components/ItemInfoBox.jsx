@@ -17,8 +17,13 @@ export default function ItemInfoBox({ item }) {
   return (
     <div id="item-overlay" onClick={hideOverlay} className="overlay-hidden">
       <div id="item-info-box" className="flyover-box">
-        <h4>{item}</h4>
-        <h5>{itemOnDisplay.itemDescription}</h5>
+        <section id="info-box-pic-container">
+          <img src={itemOnDisplay.itemPic} alt="" />
+        </section>
+        <section id="info-box-body">
+          <h4>{item}</h4>
+          <p>{itemOnDisplay.itemDescription}</p>
+        </section>
 
         <AddToOrderButton addFnc={() => addOneItem(item)} />
       </div>

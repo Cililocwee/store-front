@@ -93,3 +93,24 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+/** PRODUCT PAGE **/
+
+#item-display-pic {
+  width: 100%;
+  max-width: 300px;
+}
+
+.product-page {
+  color: var(--not-quite-black);
+  gap: 1em;
+}
+
+.product-page h2 {
+  color: black;
+}
+
+.product-description {
+  max-width: 500px;
+  text-align: justify;
+}
