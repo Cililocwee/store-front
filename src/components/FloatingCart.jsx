@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
+import AddButton from "./AddButton";
+import CheckOutButton from "./CheckOutButton";
 import "./components.css";
+import DollarDisplay from "./DollarDisplay";
+import RevealButton from "./RevealButton";
+import SubtractButton from "./SubtractButton";
 
 export default function FloatingCart() {
   const { globalMenu, addOneItem, subtractOneItem } = useContext(CartContext);
-  const [buttonLabel, setButtonLabel] = useState("bigify");
+  const [buttonLabel, setButtonLabel] = useState("show");
   const [totalPrice, setTotalPrice] = useState(0);
   const [itemsInCart, setItemsInCart] = useState(0);
 
@@ -27,39 +32,48 @@ export default function FloatingCart() {
 
   function minify() {
     document.getElementById("minified-cart-items").classList.toggle("minified");
-    if (buttonLabel === "bigify") {
-      setButtonLabel("minify");
+    document.getElementById("unminified-values").classList.toggle("minified");
+
+    // Aesthetics (label)
+    if (buttonLabel === "show") {
+      setButtonLabel("hide");
     } else {
-      setButtonLabel("bigify");
+      setButtonLabel("show");
     }
   }
 
   return (
     <div id="floating-cart">
-      <div id="minified-cart-items" className="minified">
-        <h5>Current cart:</h5>
-        {globalMenu.map(
-          (item) =>
-            item.itemTotal > 0 && (
-              <div>
-                <button onClick={() => addOneItem(item.itemName)}>+</button>
-                {item.itemTotal}{" "}
-                <button onClick={() => subtractOneItem(item.itemName)}>
-                  -
-                </button>
-                {item.itemName} = {item.itemTotal * item.itemPrice}
-              </div>
-            )
-        )}
+      <div id="cart-top">
+        <section id="cart-values">
+          <section id="minified-cart-items" className="minified">
+            <div id="cart-total">
+              Cart total: <DollarDisplay amount={totalPrice} />
+            </div>
+            <section id="items-in-basket">
+              {globalMenu.map(
+                (item) =>
+                  item.itemTotal > 0 && (
+                    <div className="cart-item-line">
+                      <AddButton addFnc={() => addOneItem(item.itemName)} />
+                      <p>{item.itemTotal}</p>
+                      <SubtractButton
+                        subtractFnc={() => subtractOneItem(item.itemName)}
+                      />
+                      {item.itemName}
+                    </div>
+                  )
+              )}
+            </section>
+          </section>
+          <section id="unminified-values">
+            <p>In cart: {itemsInCart}</p>
+          </section>
+        </section>
+        <RevealButton revealFnc={minify} />
       </div>
-      <section id="unminified-values">
-        <p>In cart: {itemsInCart}</p>
-        <p>Total: {totalPrice}</p>
-      </section>
 
-      <button id="reveal-button" onClick={minify}>
-        {buttonLabel}
-      </button>
+      <CheckOutButton />
     </div>
   );
 }
