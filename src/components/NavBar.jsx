@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import TeaLogo from "../assets/tea.svg";
-import DropDown from "./DropDown";
 
 import NavLinks from "./NavLinks";
 
@@ -11,7 +10,7 @@ export default function NavBar() {
       <Link to="/">
         <div id="logobox">
           <img alt="tea logo" src={TeaLogo} />
-          <span id="storename">Starhill Place</span>
+          <h1 id="storename">Starhill Place</h1>
         </div>
       </Link>
       <NavLinks />

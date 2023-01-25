@@ -29,32 +29,55 @@
 
 /** CONTACT PAGE **/
 
-.contact-information {
+#contact-information {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-.contact-map {
-  display: flex;
-  width: 100%;
-}
 
-.contact-map ul {
+#main-contact {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  padding: 1em;
+  box-sizing: border-box;
+  height: 100%;
+  flex-grow: 1;
+  gap: 1em;
+  margin-right: auto;
+}
+
+#contact-map-hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 1.5em;
+}
+
+@media (min-width: 575px) {
+  #contact-map-hours {
+    flex-direction: row;
+  }
+}
+
+#contact-map-hours ul {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 1em;
+  gap: 0.15em;
+  margin: auto;
 }
 
 .opening-hours {
   margin: auto;
   width: 100%;
-}
-
-.contact-map ul {
-  list-style: none;
-  padding: 25px;
-  margin: auto;
 }
 
 /** MENU PAGE **/
@@ -65,6 +88,15 @@
   align-items: center;
   width: 100%;
   height: fit-content;
+}
+
+#menu-page a {
+  text-decoration: none;
+  color: var(--not-quite-black);
+}
+
+#menu-page a:hover {
+  text-decoration: underline;
 }
 
 #menu-wrapper {
@@ -125,8 +157,10 @@
   padding: 1em;
   box-sizing: border-box;
   width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
+  transition: 0.5s ease-in;
 }
 
 #checkout-container ul {
@@ -146,6 +180,18 @@
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  transition: 0.5s ease-in;
+}
+
+@media (min-width: 750px) {
+  #checkout-container {
+    font-size: 1.2em;
+  }
+
+  .checkout-item-bubble img {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 .checkout-item-bubble :nth-child(3) {

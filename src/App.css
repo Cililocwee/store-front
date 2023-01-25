@@ -14,7 +14,7 @@
   color: darkgray;
   display: flex;
   filter: drop-shadow(2px 2px 3px var(--primary-color));
-  font-size: 1em;
+  font-size: 1.25em;
   height: 100px;
   justify-content: space-between;
   width: 100%;
@@ -78,23 +78,34 @@
 }
 
 #nav-btns {
-  display: flex;
+  display: none;
   min-width: 200px;
 }
 
-@media (max-width: 675px) {
-  #nav-btns {
-    display: none;
+#storename {
+  display: none;
+  font-size: 1.5em;
+}
+
+@media (min-width: 750px) {
+  #storename {
+    display: block;
   }
 }
 
-@media (max-width: 575px) {
-  #storename {
-    display: none;
+@media (min-width: 675px) {
+  #nav-btns {
+    display: flex;
   }
+}
 
+#navbar-home-label {
+  display: none;
+}
+
+@media (min-width: 525px) {
   #navbar-home-label {
-    display: none;
+    display: block;
   }
 }
 

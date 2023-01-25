@@ -33,7 +33,9 @@ export const CartContextProvider = ({ children }) => {
     const queuedSet = [...globalMenu];
     queuedSet.forEach((place) => {
       if (place.itemName === itemId) {
-        place.itemTotal++;
+        if (place.itemTotal < 20) {
+          place.itemTotal++;
+        }
       }
     });
     setGlobalMenu(queuedSet);
