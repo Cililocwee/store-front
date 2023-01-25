@@ -1,10 +1,26 @@
 import React from "react";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../CartContext";
 import DollarDisplay from "../components/DollarDisplay";
+import InventoryInput from "../components/InventoryInput";
 
 export default function CheckOutPage() {
-  const { globalMenu, globalTotalPrice } = useContext(CartContext);
+  const { globalMenu, globalTotalPrice, setItemOnDisplay } =
+    useContext(CartContext);
+
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = "/menu/product";
+    navigate(path);
+  };
+
+  function handleClick(item) {
+    //complete item object
+    setItemOnDisplay(item);
+    routeChange();
+  }
+
   return (
     <div className="page" id="checkout-page">
       <section id="checkout-container">
@@ -13,11 +29,17 @@ export default function CheckOutPage() {
             (item) =>
               item.itemTotal !== 0 && (
                 <div className="checkout-item-bubble">
-                  <img src={item.itemPic} alt={`${item.itemName} in cart`} />
+                  <img
+                    src={item.itemPic}
+                    alt={`${item.itemName} in cart`}
+                    onClick={() => {
+                      handleClick(item);
+                    }}
+                  />
                   <div>
                     <p>{item.itemName}</p>
                     <div>
-                      <button>+</button>3<button>-</button>
+                      <InventoryInput item={item} />
                     </div>
                   </div>
                   <DollarDisplay amount={item.itemTotal * item.itemPrice} />
@@ -27,10 +49,10 @@ export default function CheckOutPage() {
         </ul>
         <section id="checkout-totals">
           <h4>Subtotal:</h4>
-          <p>$x.00</p>
-
+          <DollarDisplay amount={globalTotalPrice} />
+          {/* TODO not yet implemented */}
           <h4>Discount:</h4>
-          <p>-$y.00</p>
+          <p>-$0.00</p>
 
           <h4>Total:</h4>
           <DollarDisplay amount={globalTotalPrice} />

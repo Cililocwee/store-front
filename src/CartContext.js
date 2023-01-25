@@ -10,7 +10,11 @@ export const CartContextProvider = ({ children }) => {
 
   const [itemOnDisplay, setItemOnDisplay] = useState({
     itemName: "no item",
+    itemPic: "",
     itemDescription: "",
+    itemPrice: 0,
+    itemTotal: 0,
+    itemType: null,
   });
 
   const [globalTotalPrice, setGlobalTotalPrice] = useState(0);

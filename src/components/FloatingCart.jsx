@@ -5,6 +5,7 @@ import AddButton from "./AddButton";
 import CheckOutButton from "./CheckOutButton";
 import "./components.css";
 import DollarDisplay from "./DollarDisplay";
+import InventoryInput from "./InventoryInput";
 import RevealButton from "./RevealButton";
 import SubtractButton from "./SubtractButton";
 
@@ -49,11 +50,7 @@ export default function FloatingCart() {
                 (item) =>
                   item.itemTotal > 0 && (
                     <div className="cart-item-line">
-                      <AddButton addFnc={() => addOneItem(item.itemName)} />
-                      <p>{item.itemTotal}</p>
-                      <SubtractButton
-                        subtractFnc={() => subtractOneItem(item.itemName)}
-                      />
+                      <InventoryInput item={item} />
                       {item.itemName}
                     </div>
                   )
