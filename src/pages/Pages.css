@@ -96,7 +96,23 @@
 }
 
 #menu-page a:hover {
-  text-decoration: underline;
+  color: black;
+}
+
+/* ONLY AFFECTS SUBSEQUENT DIVS :( */
+#menu-page a:hover ~ a {
+  filter: grayscale(100%);
+}
+
+.menu-splash {
+  width: 100%;
+  max-width: 600px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.menu-splash img {
+  width: 100%;
 }
 
 #menu-wrapper {

@@ -2,40 +2,31 @@ import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
 import "./Pages.css";
 import "../components/components.css";
-import ItemInfoBox from "../components/ItemInfoBox";
 import { Link } from "react-router-dom";
-import FloatingCart from "../components/FloatingCart";
+import MenuSplash from "../components/MenuSplash";
+import CoffeeSplash from "../assets/coffees.jpg";
+import CakeSplash from "../assets/cakes.jpg";
+import TeaSplash from "../assets/teas.jpg";
 
 export default function MenuPage() {
   const { itemOnDisplay } = useContext(CartContext);
 
   return (
-    <div id="menu-page" className="page">
-      <main id="menu-wrapper">
-        <section id="coffee-menu" className="menu-section">
-          <div className="menu-section-header">
-            <Link to="/menu/coffee">
-              <h2>Coffees</h2>
-            </Link>
-          </div>
-        </section>
+    <main id="menu-page" className="page">
+      <Link to="/menu/coffee">
+        <h2>Coffees</h2>
+        <MenuSplash image={CoffeeSplash} />
+      </Link>
 
-        <section id="tea-menu" className="menu-section">
-          <div className="menu-section-header">
-            <Link to="/menu/tea">
-              <h2>Teas</h2>
-            </Link>
-          </div>
-        </section>
+      <Link to="/menu/tea">
+        <h2>Teas</h2>
+        <MenuSplash image={TeaSplash} />
+      </Link>
 
-        <section id="food-section" className="menu-section">
-          <div className="menu-section-header">
-            <Link to="/menu/food">
-              <h2>Food</h2>
-            </Link>
-          </div>
-        </section>
-      </main>
-    </div>
+      <Link to="/menu/food">
+        <h2>Food</h2>
+        <MenuSplash image={CakeSplash} />
+      </Link>
+    </main>
   );
 }
