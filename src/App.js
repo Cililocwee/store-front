@@ -13,6 +13,7 @@ import CoffeePage from "./pages/CoffeePage";
 import TeaPage from "./pages/TeaPage";
 import FoodPage from "./pages/FoodPage";
 import ProductPage from "./pages/ProductPage";
+import CheckOutPage from "./pages/CheckOutPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/menu/tea" element={<TeaPage />} />
           <Route path="/menu/food" element={<FoodPage />} />
           <Route path="/menu/product" element={<ProductPage />} />
+          <Route path="/checkout" element={<CheckOutPage />} />
         </Routes>
         <FloatingCart />
         <Footer />
