@@ -206,12 +206,16 @@
   flex-direction: column;
   margin: 1em;
   transition: 0.5s;
+  align-items: center;
+  text-align: center;
+  gap: 0.25em;
 }
 
 .menu-item img {
   border-radius: 50%;
   height: 80px;
   width: 80px;
+  object-fit: cover;
 }
 
 .menu-item:hover {

@@ -1,4 +1,4 @@
-import BerryTart from "../assets/berrytart.jpg";
+import BerryPie from "../assets/berrypie.jpg";
 import CCarCupcake from "../assets/chocolatecaramelcupcake.jpg";
 import RocherCupcake from "../assets/rochercupcake.jpg";
 import AppleTea from "../assets/appletea.jpg";
@@ -9,8 +9,8 @@ import CMacc from "../assets/caramelmacchiato.jpg";
 
 export const food = [
   {
-    itemName: "Berry Tart",
-    itemPic: BerryTart,
+    itemName: "Berry Pie",
+    itemPic: BerryPie,
     itemDescription:
       "A lovely seasonal berry tart with locally sourced berries. Best with a warm drink!",
     itemPrice: 350,
