@@ -9,24 +9,18 @@ import RevealButton from "./RevealButton";
 import SubtractButton from "./SubtractButton";
 
 export default function FloatingCart() {
-  const { globalMenu, addOneItem, subtractOneItem } = useContext(CartContext);
+  const { globalMenu, addOneItem, subtractOneItem, globalTotalPrice } =
+    useContext(CartContext);
   const [buttonLabel, setButtonLabel] = useState("show");
-  const [totalPrice, setTotalPrice] = useState(0);
   const [itemsInCart, setItemsInCart] = useState(0);
 
   useEffect(() => {
-    let grandTotal = 0;
     let grandNumber = 0;
-
-    globalMenu.forEach((item) => {
-      grandTotal += item.itemTotal * item.itemPrice;
-    });
 
     globalMenu.forEach((item) => {
       grandNumber += item.itemTotal;
     });
 
-    setTotalPrice(grandTotal);
     setItemsInCart(grandNumber);
   }, [globalMenu]);
 
@@ -48,7 +42,7 @@ export default function FloatingCart() {
         <section id="cart-values">
           <section id="minified-cart-items" className="minified">
             <div id="cart-total">
-              Cart total: <DollarDisplay amount={totalPrice} />
+              Cart total: <DollarDisplay amount={globalTotalPrice} />
             </div>
             <section id="items-in-basket">
               {globalMenu.map(

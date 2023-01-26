@@ -2,16 +2,8 @@ import React from "react";
 
 export default function DollarDisplay({ amount }) {
   if (amount !== 0) {
-    return (
-      <div>
-        <p>${(amount / 100).toFixed(2)}</p>
-      </div>
-    );
+    return <p>${(amount / 100).toFixed(2)}</p>;
   } else {
-    return (
-      <div>
-        <p>$0.00</p>
-      </div>
-    );
+    return <p>$0.00</p>;
   }
 }

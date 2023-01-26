@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import { food, coffees, teas } from "./menuitems/menu";
 
 export const CartContext = createContext(null);
@@ -12,6 +12,19 @@ export const CartContextProvider = ({ children }) => {
     itemName: "no item",
     itemDescription: "",
   });
+
+  const [globalTotalPrice, setGlobalTotalPrice] = useState(0);
+
+  useEffect(() => {
+    let grandTotal = 0;
+
+    globalMenu.forEach((item) => {
+      grandTotal += item.itemTotal * item.itemPrice;
+    });
+
+    setGlobalTotalPrice(grandTotal);
+  }, [globalMenu]);
+
   function addOneItem(itemId) {
     const queuedSet = [...globalMenu];
     queuedSet.forEach((place) => {
@@ -40,6 +53,7 @@ export const CartContextProvider = ({ children }) => {
     subtractOneItem,
     itemOnDisplay,
     setItemOnDisplay,
+    globalTotalPrice,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
