@@ -1,74 +1,66 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
+import { food, coffees, teas } from "./menuitems/menu";
 
 export const CartContext = createContext(null);
 
 export const CartContextProvider = ({ children }) => {
   // ** cart should always be an arr of arr[id,type,price]
-  const [cart, setCartItems] = useState([]);
-  const [total, setTotal] = useState(0);
-  const [inventory, setInventory] = useState({});
+  const [currentDiscount, setCurrentDiscount] = useState(0);
+  const [globalMenu, setGlobalMenu] = useState([...food, ...coffees, ...teas]);
 
-  const handleInventoryChange = (arr) => {
-    // always sort
-    let arrQueue = arr;
-    arrQueue.sort((a, b) => {
-      return a[1].localeCompare(b[1]);
+  const [itemOnDisplay, setItemOnDisplay] = useState({
+    itemName: "no item",
+    itemPic: "",
+    itemDescription: "",
+    itemPrice: 0,
+    itemTotal: 0,
+    itemType: null,
+  });
+
+  const [globalTotalPrice, setGlobalTotalPrice] = useState(0);
+
+  useEffect(() => {
+    let grandTotal = 0;
+
+    globalMenu.forEach((item) => {
+      grandTotal += item.itemTotal * item.itemPrice;
     });
-    // apply any changes
-    setCartItems(arr);
-  };
 
-  const addItemToCart = (item) => {
-    let arrQueue = [...cart, [item[0], item[1], item[2]]];
-    handleInventoryChange(arrQueue);
-    setTotal(total + parseFloat(item[2]));
-  };
+    setGlobalTotalPrice(grandTotal);
+  }, [globalMenu]);
 
-  // receives arr[id,type,price]
-  const removeItemFromCart = (item) => {
-    let positiveMatch = cart.filter((arr) => {
-      return arr[0] === item[0];
+  function addOneItem(itemId) {
+    const queuedSet = [...globalMenu];
+    queuedSet.forEach((place) => {
+      if (place.itemName === itemId) {
+        if (place.itemTotal < 20) {
+          place.itemTotal++;
+        }
+      }
     });
-    if (positiveMatch.length > 0) {
-      setTotal(total - item[2]);
-    } else {
-      console.log("No item");
-    }
-    positiveMatch.pop();
-    const negativeMatch = cart.filter((arr) => {
-      return arr[0] !== item[0];
+    setGlobalMenu(queuedSet);
+  }
+
+  function subtractOneItem(itemId) {
+    const queuedSet = [...globalMenu];
+    queuedSet.forEach((place) => {
+      if (place.itemName === itemId) {
+        if (place.itemTotal > 0) {
+          place.itemTotal--;
+        }
+      }
     });
-    let completedFilter = [...positiveMatch, ...negativeMatch];
-    handleInventoryChange(completedFilter);
-  };
-
-  const clearCart = () => {
-    setCartItems([]);
-    setTotal(0);
-  };
-
-  // ** used in DrinkCards
-  // keeps track of the amount of each item in the cart
-  let counter = {};
-
-  for (let element of cart.flat()) {
-    if (counter[element]) {
-      counter[element] += 1;
-    } else {
-      counter[element] = 1;
-    }
+    setGlobalMenu(queuedSet);
   }
 
   const value = {
-    clearCart,
-    cart,
-    setCartItems,
-    addItemToCart,
-    removeItemFromCart,
-    total,
-    inventory,
-    setInventory,
-    counter,
+    globalMenu,
+    addOneItem,
+    subtractOneItem,
+    itemOnDisplay,
+    setItemOnDisplay,
+    globalTotalPrice,
+    currentDiscount,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

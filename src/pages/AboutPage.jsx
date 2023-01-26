@@ -1,11 +1,9 @@
 import React from "react";
-import BackDrop from "../components/BackDrop";
-import AboutBG from "../assets/caferelax.jpg";
 
 export default function AboutPage() {
   return (
-    <BackDrop background={AboutBG}>
-      <div className="about-page">
+    <div className="page">
+      <section id="about-page" className="main-blurb">
         <h2>Tea Time - A Cafe for Relaxation</h2>
         <h4>What is Tea Time?</h4>
         <p>Tea Time is more than a place -- it's a time:</p>
@@ -24,8 +22,10 @@ export default function AboutPage() {
           out of your fresh cup of tea.
         </p>
         <br />
-        <p style={{ textAlign: "center" }}>Tea Time is a time for tea.</p>
-      </div>
-    </BackDrop>
+        <p style={{ textAlign: "center" }}>
+          <em>Tea Time is a time for tea.</em>
+        </p>
+      </section>
+    </div>
   );
 }
