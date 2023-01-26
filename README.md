@@ -63,7 +63,7 @@
 
 ## About The Project
 
-![Star Hill Place Demo](https://i.imgur.com/u00bI6j.gif)
+![Star Hill Place Demo](https://i.imgur.com/oL376Na.gif)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
