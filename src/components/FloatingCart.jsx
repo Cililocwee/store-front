@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useRef } from "react";
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
 import AddButton from "./AddButton";
@@ -7,13 +8,37 @@ import "./components.css";
 import DollarDisplay from "./DollarDisplay";
 import InventoryInput from "./InventoryInput";
 import RevealButton from "./RevealButton";
-import SubtractButton from "./SubtractButton";
 
 export default function FloatingCart() {
-  const { globalMenu, addOneItem, subtractOneItem, globalTotalPrice } =
-    useContext(CartContext);
-  const [buttonLabel, setButtonLabel] = useState("show");
+  const { globalMenu, globalTotalPrice } = useContext(CartContext);
   const [itemsInCart, setItemsInCart] = useState(0);
+  const ref = useOutsideClick(minimizeFloater);
+
+  function minimizeFloater() {
+    document.getElementById("reveal-component").classList.remove("selected");
+    document.getElementById("check-out-button").classList.add("minified");
+    document.getElementById("minified-cart-items").classList.add("minified");
+    document.getElementById("unminified-values").classList.remove("minified");
+  }
+
+  function useOutsideClick(callback) {
+    const ref = useRef();
+
+    useEffect(() => {
+      function handleClick(e) {
+        if (ref.current && !ref.current.contains(e.target)) {
+          callback();
+        }
+      }
+
+      document.addEventListener("click", handleClick);
+
+      return () => {
+        document.removeEventListener("click", handleClick);
+      };
+    }, [ref]);
+    return ref;
+  }
 
   useEffect(() => {
     let grandNumber = 0;
@@ -28,17 +53,10 @@ export default function FloatingCart() {
   function minify() {
     document.getElementById("minified-cart-items").classList.toggle("minified");
     document.getElementById("unminified-values").classList.toggle("minified");
-
-    // Aesthetics (label)
-    if (buttonLabel === "show") {
-      setButtonLabel("hide");
-    } else {
-      setButtonLabel("show");
-    }
   }
 
   return (
-    <div id="floating-cart">
+    <div id="floating-cart" ref={ref}>
       <div id="cart-top">
         <section id="cart-values">
           <section id="minified-cart-items" className="minified">
@@ -64,7 +82,7 @@ export default function FloatingCart() {
         <RevealButton revealFnc={minify} />
       </div>
 
-      <CheckOutButton />
+      <CheckOutButton additionalFnc={minimizeFloater} />
     </div>
   );
 }

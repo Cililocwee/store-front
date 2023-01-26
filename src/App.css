@@ -192,3 +192,8 @@
 .socials img {
   height: 25px;
 }
+
+/** BUTTON HOVER EFFECTS**/
+.hoverable-button:hover {
+  filter: invert(100%);
+}

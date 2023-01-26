@@ -5,7 +5,7 @@ export const CartContext = createContext(null);
 
 export const CartContextProvider = ({ children }) => {
   // ** cart should always be an arr of arr[id,type,price]
-
+  const [currentDiscount, setCurrentDiscount] = useState(0);
   const [globalMenu, setGlobalMenu] = useState([...food, ...coffees, ...teas]);
 
   const [itemOnDisplay, setItemOnDisplay] = useState({
@@ -60,6 +60,7 @@ export const CartContextProvider = ({ children }) => {
     itemOnDisplay,
     setItemOnDisplay,
     globalTotalPrice,
+    currentDiscount,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

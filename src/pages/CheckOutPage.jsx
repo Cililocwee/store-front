@@ -6,7 +6,7 @@ import DollarDisplay from "../components/DollarDisplay";
 import InventoryInput from "../components/InventoryInput";
 
 export default function CheckOutPage() {
-  const { globalMenu, globalTotalPrice, setItemOnDisplay } =
+  const { globalMenu, globalTotalPrice, setItemOnDisplay, currentDiscount } =
     useContext(CartContext);
 
   let navigate = useNavigate();
@@ -25,6 +25,7 @@ export default function CheckOutPage() {
     <div className="page" id="checkout-page">
       <section id="checkout-container">
         <ul>
+          {globalTotalPrice === 0 ? <p>No items in cart</p> : <></>}
           {globalMenu.map(
             (item) =>
               item.itemTotal !== 0 && (
@@ -50,14 +51,15 @@ export default function CheckOutPage() {
         <section id="checkout-totals">
           <h4>Subtotal:</h4>
           <DollarDisplay amount={globalTotalPrice} />
-          {/* TODO not yet implemented */}
           <h4>Discount:</h4>
-          <p>-$0.00</p>
+          <DollarDisplay amount={currentDiscount} flag="discount" />
 
           <h4>Total:</h4>
           <DollarDisplay amount={globalTotalPrice} />
         </section>
-        <button id="payment-button">Choose Payment Method</button>
+        <button id="payment-button" className="hoverable-button">
+          Choose Payment Method
+        </button>
       </section>
     </div>
   );
